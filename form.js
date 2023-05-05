@@ -1,4 +1,12 @@
-
+function translate() {
+    const langSelect = document.getElementById('translator');
+    const lang = langSelect.options[langSelect.selectedIndex].value;
+    xhr.withCredentials = true;
+    xhr.addEventListener('readystatechange', function () {
+        if (this.readyState === this.DONE) {
+            const response = JSON.parse(this.responseText);
+        }
+    });
 
 
 // API translation
