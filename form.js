@@ -29,6 +29,7 @@ xhr.setRequestHeader('X-RapidAPI-Host', 'google-translate1.p.rapidapi.com');
 
 xhr.send(data);
 
+
 // BULMA JS form
 function stripe() {
     var stripe = Stripe(

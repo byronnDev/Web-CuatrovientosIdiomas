@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bulma/css/bulma.css">
+    <link rel="stylesheet" href="./bulma/css/style.css">
+    <script src="https://kit.fontawesome.com/9ad3ec13bd.js" crossorigin="anonymous"></script>
     <title>Escuela de Idiomas</title>
 </head>
 <header>
@@ -266,32 +268,119 @@
   </section>
 
   <section class="section">
-    <div class="container">
-      <h2 class="title">Por que elegirnos?</h2>
+    <div class="container has-text-centered">
+      <!--Title: Why choose us?-->
+      <h2 class="title">Why choose us?</h2>
 
       <div class="columns">
         <div class="column is-flex is-align-items-center">
           <img src="https://placehold.co/400" alt="I" class="card">
         </div>
 
-        <div class="column is-flex is-align-items-center">
-          <div>
-            <h2>Anyos de experiencia</h2>
+        <div class="column is-align-items-center">
+          <!--FAQs-->
+          <div class="container is-max-desktop is-faq pb-5">
+            <div class="card">
+              <header class="has-background-grey card-header has-text-light">
+                <p class="card-header-title has-text-light"> 
+                  Component
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </header>
+              <div class="card-content has-background-light is-hidden">
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                  <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container is-max-desktop is-faq pb-5">
+            <div class="card">
+              <header class="has-background-grey card-header has-text-light">
+                <p class="card-header-title has-text-light"> 
+                  Component
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </header>
+              <div class="card-content has-background-light is-hidden">
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                  <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            <h2>Centro oficial certificador</h2>
+          <div class="container is-max-desktop is-faq">
+            <div class="card">
+              <header class="has-background-grey card-header has-text-light">
+                <p class="card-header-title has-text-light"> 
+                  Component
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                  <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </header>
+              <div class="card-content has-background-light is-hidden">
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                  <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                </div>
+              </div>
+            </div>
+          </div>
+  </section>
 
-            <h2>Exito de alumnado</h2>
-
-            <h2>Adaptacion de las clases a necesidades alumnado</h2>
-
-            <h2>Reconocimientos</h2>
-            
+  <section class="section">
+    <h1 class="title has-text-centered">FAQs</h1>
+    <div class="container is-max-desktop is-faq">
+      <div class="card">
+        <header class="has-background-grey card-header has-text-light">
+          <p class="card-header-title has-text-light"> 
+            Component
+          </p>
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </header>
+        <div class="card-content has-background-light is-hidden">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  
+  <section>
+
+  <script>
+    let collection = document.getElementsByClassName("is-faq");
+    Array.from(collection).forEach(element => {
+      element.addEventListener("mousedown", function() {
+        if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
+          element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
+        } else {
+          element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
+        }
+      });
+    
+    });
+  </script>
+ 
     <footer>
         <div id="translator" class="select is-primary">
           <select>
