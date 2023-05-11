@@ -1,3 +1,5 @@
+
+// Translate API
 function translate() {
     const langSelect = document.getElementById('translator');
     const lang = langSelect.options[langSelect.selectedIndex].value;
@@ -28,6 +30,7 @@ xhr.setRequestHeader('X-RapidAPI-Key', '3d5ce6dfb4mshaeeea817946dc73p17c499jsnd9
 xhr.setRequestHeader('X-RapidAPI-Host', 'google-translate1.p.rapidapi.com');
 
 xhr.send(data);
+}
 
 
 // BULMA JS form
