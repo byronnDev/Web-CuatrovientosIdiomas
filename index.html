@@ -1,101 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bulma/css/bulma.css">
-    <link rel="stylesheet" href="./bulma/css/style.css">
-    <script src="https://kit.fontawesome.com/9ad3ec13bd.js" crossorigin="anonymous"></script>
-    <title>Escuela de Idiomas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bulma/css/bulma.css"> <!-- Bulma CSS -->
+  <link rel="stylesheet" href="./bulma/css/style.css"> <!-- Our own CSS -->
+  <script src="https://kit.fontawesome.com/9ad3ec13bd.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+  <title>Escuela de Idiomas</title>
 </head>
 <header>
-    <nav class="navbar is-transparent">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-          </a>
-          <div class="navbar-burger" data-target="navbarExampleTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" href="https://bulma.io/">
-              Home
-            </a>
-            
-            <a class="navbar-item" href="https://bulma.io/">
-              Calendario
-            </a>
+  <nav class="navbar is-transparent is-fixed-top has-shadow">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./index.html">
+        <img src="./images/logo idiomas.jpg" alt="Cuatrovientos Idiomas" width="100%" height="auto">
+      </a>
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
 
-            <a class="navbar-item" href="https://bulma.io/">
-              Empresas
-            </a>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="./index.html">
+          Home
+        </a>
+        <a class="navbar-item" href="./index.html#course-categories">
+          Courses
+        </a>
+      </div>
 
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-                Courses
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-primary" href="./form.html">
+                <span class="icon">
+                  <i class="fas fa-user"></i>
+                </span>
+                <span>Inscribe</span>
               </a>
-              <div class="navbar-dropdown is-boxed">
-                
-                <a class="navbar-item" href="https://bulma.io/documentation/overview/start/">
-                  A1
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/overview/modifiers/">
-                  A2
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                  B1
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                  B2
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                  C1
-                </a>
-                <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                  C2
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                    C2
-                  </a>
-                <hr class="navbar-divider">
-              </div>
-            </div>
-          </div>
-      
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                    <span class="icon">
-                      <i class="fab fa-twitter"></i>
-                    </span>
-                    <span>
-                      About Us
-                    </span>
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.4/bulma-0.9.4.zip">
-                    <span class="icon">
-                      <i class="fas fa-download"></i>
-                    </span>
-                    <span>Inscribe</span>
-                  </a>
-                </p>
-              </div>
-            </div>
+            </p>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </nav>
 </header>
+
 <body>
   <!--Start of section "Landing"-->
   <section class="hero is-medium is-link custom-bg">
@@ -106,18 +61,89 @@
       </p>
       <p class="subtitle">
         ¡Te damos la bienvenida a Cuatrovientos Idiomas!
-        Centro de idiomas desde 2008 con un objetivo primordial: que el alumnado aprenda a comunicarse en inglés o francés de forma eficaz.
+        Centro de idiomas desde 2008 con un objetivo primordial: que el alumnado aprenda a comunicarse en inglés o
+        francés de forma eficaz.
       </p>
     </div>
   </section>
-  
+
   <!--End of section "Landing"-->
-  
- <!--Start of section "Our Services"-->
- <section>
-    <!--TODO-->
- </section>
- <!--End of section "Our Services"-->
+
+  <!--Start of section "Our Services"-->
+  <section class="section">
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-4 has-text-centered">John Smith</p>
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+              <a href="#">#css</a> <a href="#">#responsive</a>
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4 has-text-centered">John Smith</p>
+                <p class="subtitle is-6">@johnsmith</p>
+              </div>
+            </div>
+
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+              <a href="#">#css</a> <a href="#">#responsive</a>
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">John Smith</p>
+                <p class="subtitle is-6">@johnsmith</p>
+              </div>
+            </div>
+
+            <div class="content">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+              <a href="#">#css</a> <a href="#">#responsive</a>
+              <br>
+              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End of section "Our Services"-->
 
 
   <!--Start of section "Why Enroll in Our English Academy"-->
@@ -159,7 +185,8 @@
           <div class="box has-text-centered">
             <i class="fas fa-comments fa-3x"></i>
             <h3 class="title is-5">Interactive Learning</h3>
-            <p>Our classes are designed to be interactive and engaging, with plenty of opportunities for discussion and practice.</p>
+            <p>Our classes are designed to be interactive and engaging, with plenty of opportunities for discussion and
+              practice.</p>
           </div>
         </div>
         <div class="column is-one-third">
@@ -170,7 +197,7 @@
           </div>
         </div>
       </div>
-    </div>    
+    </div>
   </section>
   <!--End of section "Why Enroll in Our English Academy"-->
 
@@ -201,13 +228,13 @@
     </div>
   </section>
   <!--End of section "College Data"-->
-  
 
-  
-  
-  
+
+
+
+
   <!--Start of section "Our Courses"-->
-  <section class="section">
+  <section class="section" id="course-categories">
     <!--C1, C2, B1, B2 menu-->
     <aside class="menu">
       <p class="menu-label">
@@ -218,21 +245,29 @@
           <ul>
             <li>A1
               <span class="icon">
-                  <i class="fas fa-info-circle"></i>
+                <i class="fas fa-info-circle"></i>
               </span>
               <article class="message is-info">
                 <div class="message-body is-hidden">
-                  You can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer questions about personal details such as where you live, people you know and things you have. You can interact in a simple way provided the other person talks slowly and clearly and is prepared to help. <a href="#">Learn more</a>
+                  You can understand and use familiar everyday expressions and very basic phrases aimed at the
+                  satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
+                  questions about personal details such as where you live, people you know and things you have. You can
+                  interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
+                  <a href="#">Learn more</a>
                 </div>
               </article>
             </li>
             <li>A2
               <span class="icon">
                 <i class="fas fa-info-circle"></i>
-            </span>
+              </span>
               <article class="message is-info">
                 <div class="message-body is-hidden">
-                  You can understand sentences and frequently used expressions related to areas of most immediate relevance (e.g. very basic personal and family information, shopping, local geography, employment). You can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters. You can describe in simple terms aspects of your background, immediate environment and matters in areas of immediate need. <a href="#">Learn more</a>
+                  You can understand sentences and frequently used expressions related to areas of most immediate
+                  relevance (e.g. very basic personal and family information, shopping, local geography, employment).
+                  You can communicate in simple and routine tasks requiring a simple and direct exchange of information
+                  on familiar and routine matters. You can describe in simple terms aspects of your background,
+                  immediate environment and matters in areas of immediate need. <a href="#">Learn more</a>
                 </div>
               </article>
             </li>
@@ -244,14 +279,13 @@
             <li>A1
               <span class="icon">
                 <i class="fas fa-info-circle"></i>
-            </span>
+              </span>
             </li>
             <li>B2
               <span class="icon">
                 <i class="fas fa-info-circle"></i>
-            </span>
+              </span>
             </li>
-            <li>Add a member</li>
           </ul>
         </li>
       </ul>
@@ -259,43 +293,50 @@
   </section>
   <!--End of section "Our Courses"-->
 
+  <!--Prices-->
+
+
+
+
   <!--Start of section "Students Reviews"-->
   <section class="section">
     <div class="container">
       <h1 class="title pb-6">User Reviews</h1>
       <div class="card-carousel">
         <div class="card" id="1">
-            <div class="image-container"></div>
-            <p>" Its student-centered approach and highly skilled team of professionals make it one of the best options for learning a new language."</p>
+          <div class="image-container"></div>
+          <p>" Its student-centered approach and highly skilled team of professionals make it one of the best options
+            for learning a new language."</p>
         </div>
         <div class="card" id="2">
-            <div class="image-container"></div>
-            <p>"I would recommend this school to anyone looking to improve their language skills."</p>
+          <div class="image-container"></div>
+          <p>"I would recommend this school to anyone looking to improve their language skills."</p>
         </div>
         <div class="card" id="3">
-            <div class="image-container"></div>
-            <p>"The learning environment is welcoming and friendly, which makes students feel comfortable and motivated to learn."</p>
+          <div class="image-container"></div>
+          <p>"The learning environment is welcoming and friendly, which makes students feel comfortable and motivated to
+            learn."</p>
         </div>
         <div class="card" id="4">
-            <div class="image-container"></div>
-            <p>
-              "The school offers a wide variety of programs and flexible schedules."</p>
+          <div class="image-container"></div>
+          <p>
+            "The school offers a wide variety of programs and flexible schedules."</p>
         </div>
         <div class="card" id="5">
-            <div class="image-container"></div>
-            <p>"Excellent in preparing students to obtain official English language certifications."</p>
+          <div class="image-container"></div>
+          <p>"Excellent in preparing students to obtain official English language certifications."</p>
         </div>
-    </div>
-    <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
+      </div>
+      <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
     </div>
   </section>
   <!--End of section "Students Reviews"-->
-    
+
 
   <!--Start of section "FAQ"-->
- <section class="section">
+  <section class="section">
     <h1 class="title has-text-centered">FAQs</h1>
-    
+
     <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
@@ -306,7 +347,107 @@
             </span>
           </button>
 
-          <p class="card-header-title is-size-4"> 
+          <p class="card-header-title is-size-4">
+            How can I enroll in a Cuatrovientos Idiomas course?
+          </p>
+        </header>
+
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            First of all, it is recommended that you take the online level test that is available on our website.<br>
+            It is free and does not commit you to anything.<br>
+            Registration is done online from our website by accessing the form through REGISTRATION and filling in the
+            fields with your information. However, you can also access it by clicking HERE. Once you submit it, you will
+            receive a copy by email, and your spot will be confirmed through email.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+
+          <p class="card-header-title is-size-4">
+            How many levels are there in the academy?
+          </p>
+        </header>
+
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            Our courses are adapted to the Common European Framework of Reference for Languages, and therefore the
+            levels are:
+            <li>A1, A2: Basic or Elementary level.</li>
+            <li>B1, B2: Intermediate level.</li>
+            <li>C1, C2: Advanced level.</li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+
+          <p class="card-header-title is-size-4">
+            Are there free trial sessions available?
+          </p>
+        </header>
+
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            Yes, you can come and try a first class completely FREE of charge, with no obligation. Request it by clicking HERE.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+
+          <p class="card-header-title is-size-4">
+            Can I enroll at any time of the year?
+          </p>
+        </header>
+
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            Although it is highly recommended to enroll at the beginning of the course in October, you can enroll at any time of the year. If you wish to enroll after the course has started, it is highly advisable to take the level test beforehand as we mentioned before, in order to assign you to a suitable group for you.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+
+          <p class="card-header-title is-size-4">
             Component
           </p>
         </header>
@@ -330,7 +471,7 @@
             </span>
           </button>
 
-          <p class="card-header-title is-size-4"> 
+          <p class="card-header-title is-size-4">
             Component
           </p>
         </header>
@@ -343,144 +484,48 @@
         </div>
       </div>
     </div>
+    <section>
+      <!--End of section "FAQ"-->
 
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
-      <div class="card">
-        <header class="card-header-no-border">
+      <script>
+        let collection = document.getElementsByClassName("is-faq");
+        Array.from(collection).forEach(element => {
+          element.addEventListener("mousedown", function () {
+            if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
+              element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
+            } else {
+              element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
+            }
+          });
 
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-
-          <p class="card-header-title is-size-4"> 
-            Component
-          </p>
-        </header>
-
-        <div class="card-content pt-0 is-hidden">
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
-      <div class="card">
-        <header class="card-header-no-border">
-
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-
-          <p class="card-header-title is-size-4"> 
-            Component
-          </p>
-        </header>
-
-        <div class="card-content pt-0 is-hidden">
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
-      <div class="card">
-        <header class="card-header-no-border">
-
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-
-          <p class="card-header-title is-size-4"> 
-            Component
-          </p>
-        </header>
-
-        <div class="card-content pt-0 is-hidden">
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
-      <div class="card">
-        <header class="card-header-no-border">
-
-          <button class="card-header-icon" aria-label="more options">
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-
-          <p class="card-header-title is-size-4"> 
-            Component
-          </p>
-        </header>
-
-        <div class="card-content pt-0 is-hidden">
-          <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  <section>
-  <!--End of section "FAQ"-->
-
-  <script>
-    let collection = document.getElementsByClassName("is-faq");
-    Array.from(collection).forEach(element => {
-      element.addEventListener("mousedown", function() {
-        if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
-          element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
-        } else {
-          element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
-        }
-      });
-    
-    });
-
-
-    // More info button on the Course Details page
-    // Obtén todos los elementos con la clase 'fa-info-circle'
-      const infoIcons = document.getElementsByClassName('fa-info-circle');
-      // Ponemos el raton como puntero
-      for (let i = 0; i < infoIcons.length; i++) {
-        infoIcons[i].style.cursor = 'pointer';
-      }
-      // Recorre todos los iconos de información
-      for (let i = 0; i < infoIcons.length; i++) {
-        // Agrega un event listener para el evento de clic
-        infoIcons[i].addEventListener('click', function () {
-          // Encuentra el elemento padre que contiene el mensaje oculto
-          const parentElement = this.parentNode.parentNode;
-          
-          // Encuentra el mensaje oculto dentro del elemento padre
-          const messageBody = parentElement.querySelector('.message-body');
-          
-          // Alterna la visibilidad del mensaje oculto agregando o quitando la clase 'is-hidden'
-          messageBody.classList.toggle('is-hidden');
         });
-      }
 
-  </script>
- 
-    <footer>
+
+        // More info button on the Course Details page
+        // Obtén todos los elementos con la clase 'fa-info-circle'
+        const infoIcons = document.getElementsByClassName('fa-info-circle');
+        // Ponemos el raton como puntero
+        for (let i = 0; i < infoIcons.length; i++) {
+          infoIcons[i].style.cursor = 'pointer';
+        }
+        // Recorre todos los iconos de información
+        for (let i = 0; i < infoIcons.length; i++) {
+          // Agrega un event listener para el evento de clic
+          infoIcons[i].addEventListener('click', function () {
+            // Encuentra el elemento padre que contiene el mensaje oculto
+            const parentElement = this.parentNode.parentNode;
+
+            // Encuentra el mensaje oculto dentro del elemento padre
+            const messageBody = parentElement.querySelector('.message-body');
+
+            // Alterna la visibilidad del mensaje oculto agregando o quitando la clase 'is-hidden'
+            messageBody.classList.toggle('is-hidden');
+          });
+        }
+
+      </script>
+
+      <footer>
         <div id="translator" class="select is-primary">
           <select>
             <option>Language</option>
@@ -498,7 +543,7 @@
       https://eoidna.educacion.navarra.es/ingles-2/programa-thats-english-en/
       -->
       <script src="./carousel.js"></script>
-
-      <script src="./form.js"></script>
+      <script src="./main.js"></script>
 </body>
+
 </html>
