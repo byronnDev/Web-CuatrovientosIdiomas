@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bulma/css/bulma.css"> <!-- Bulma CSS -->
   <link rel="stylesheet" href="./bulma/css/style.css"> <!-- Our own CSS -->
-  <script src="https://kit.fontawesome.com/9ad3ec13bd.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/81e1d956bc.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
   <title>Escuela de Idiomas</title>
 </head>
 <header>
@@ -70,18 +70,13 @@
   <!--End of section "Landing"-->
 
   <!--Start of section "Our Services"-->
-  <section class="section">
+  <section class="section mt-6">
     <div class="columns">
       <div class="column">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
+        <div class="card servicios">
           <div class="card-content">
-            <p class="title is-4 has-text-centered">John Smith</p>
-            <div class="content">
+            <p class="title is-3 has-text-centered">In-person classes</p>
+            <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="#">#css</a> <a href="#">#responsive</a>
@@ -92,21 +87,10 @@
         </div>
       </div>
       <div class="column">
-        <div class="card">
+        <div class="card servicios">
           <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4 has-text-centered">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
-              </div>
-            </div>
-
-            <div class="content">
+            <p class="title is-3 has-text-centered">Online classes</p>
+            <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="#">#css</a> <a href="#">#responsive</a>
@@ -117,21 +101,10 @@
         </div>
       </div>
       <div class="column">
-        <div class="card">
+        <div class="card servicios">
           <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
-              </div>
-            </div>
-
-            <div class="content">
+            <p class="title is-3 has-text-centered">Free trial</p>
+            <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="#">#css</a> <a href="#">#responsive</a>
@@ -235,56 +208,189 @@
 
   <!--Start of section "Our Courses"-->
   <section class="section" id="course-categories">
+    <h1 class="title has-text-left">Course categories</h1>
     <!--C1, C2, B1, B2 menu-->
     <aside class="menu">
-      <p class="menu-label">
-        Course categories
-      </p>
       <ul class="menu-list">
-        <li class=""><a class="title is-active">English</a>
-          <ul>
+        <li>
+          <a class="subtitle is-active">English <i class="fas fa-angle-down"></i></a>
+          <ul class="is-hidden">
             <li>A1
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand and use familiar everyday expressions and very basic phrases aimed at the
                   satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
                   questions about personal details such as where you live, people you know and things you have. You can
                   interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
-                  <a href="#">Learn more</a>
                 </div>
               </article>
+              -->
             </li>
             <li>A2
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand sentences and frequently used expressions related to areas of most immediate
                   relevance (e.g. very basic personal and family information, shopping, local geography, employment).
                   You can communicate in simple and routine tasks requiring a simple and direct exchange of information
                   on familiar and routine matters. You can describe in simple terms aspects of your background,
-                  immediate environment and matters in areas of immediate need. <a href="#">Learn more</a>
+                  immediate environment and matters in areas of immediate need.
+                </div>
+              </article>
+              -->
+            </li>
+
+            <li>B1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>B2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
                 </div>
               </article>
             </li>
           </ul>
         </li>
+
+        <!--TODO FRENCH-->
         <li>
-          <a class="title is-active">French</a>
-          <ul>
+          <a class="subtitle is-active">French <i class="fas fa-angle-down"></i></a>
+          <ul class="is-hidden">
             <li>A1
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+              <article class="message is-info">
+                <div class="message-body is-hidden">
+                  You can understand and use familiar everyday expressions and very basic phrases aimed at the
+                  satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
+                  questions about personal details such as where you live, people you know and things you have. You can
+                  interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
+                </div>
+              </article>
+              -->
             </li>
+            <li>A2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+              <article class="message is-info">
+                <div class="message-body is-hidden">
+                  You can understand sentences and frequently used expressions related to areas of most immediate
+                  relevance (e.g. very basic personal and family information, shopping, local geography, employment).
+                  You can communicate in simple and routine tasks requiring a simple and direct exchange of information
+                  on familiar and routine matters. You can describe in simple terms aspects of your background,
+                  immediate environment and matters in areas of immediate need.
+                </div>
+              </article>
+              -->
+            </li>
+
+            <li>B1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
             <li>B2
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
             </li>
           </ul>
         </li>
@@ -499,30 +605,6 @@
           });
 
         });
-
-
-        // More info button on the Course Details page
-        // Obtén todos los elementos con la clase 'fa-info-circle'
-        const infoIcons = document.getElementsByClassName('fa-info-circle');
-        // Ponemos el raton como puntero
-        for (let i = 0; i < infoIcons.length; i++) {
-          infoIcons[i].style.cursor = 'pointer';
-        }
-        // Recorre todos los iconos de información
-        for (let i = 0; i < infoIcons.length; i++) {
-          // Agrega un event listener para el evento de clic
-          infoIcons[i].addEventListener('click', function () {
-            // Encuentra el elemento padre que contiene el mensaje oculto
-            const parentElement = this.parentNode.parentNode;
-
-            // Encuentra el mensaje oculto dentro del elemento padre
-            const messageBody = parentElement.querySelector('.message-body');
-
-            // Alterna la visibilidad del mensaje oculto agregando o quitando la clase 'is-hidden'
-            messageBody.classList.toggle('is-hidden');
-          });
-        }
-
       </script>
 
       <footer>

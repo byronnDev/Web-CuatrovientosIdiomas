@@ -1,32 +1,46 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat;:300,400,600,700,800|Source+Sans+Pro:300,400,600,700);
+
+/* Scroll smooth */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Counter */
-h3{
+h3 {
   font-family: "Montserrat", sans-serif;
   color: #111;
   font-weight: 800;
 }
 
+.servicios {
+  border-radius: 1rem;
+  box-shadow: 0 0px 50px rgba(99, 99, 99, 0.433);
+}
+
 .counter-item .counter-stat {
   font-size: 50px;
 }
+
 .counter-item p {
   margin-bottom: 0px;
 }
+
 /*Form*/
 .shadow-ontop-effect {
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
-  }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
 
-.radioUpgraded{
-    position: absolute; 
-    opacity: 0; 
-    pointer-events: none;
+.radioUpgraded {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* landing */
 .custom-bg {
-  position: relative; /* Required for ::before pseudo-element */
+  position: relative;
+  /* Required for ::before pseudo-element */
 }
 
 .custom-bg::before {
@@ -41,12 +55,12 @@ h3{
   filter: brightness(60%) contrast(80%);
 }
 
-.is-z-preference{
+.is-z-preference {
   z-index: 1;
 }
 
 /*faq*/
-.is-faq:hover{
+.is-faq:hover {
   border-bottom: 3px solid #e0e0e0;
 }
 
@@ -54,6 +68,7 @@ h3{
   width: 600px;
   margin: auto;
 }
+
 .accordion {
   padding: 10px;
   margin-top: 10px;
@@ -61,12 +76,14 @@ h3{
   background: rgb(105, 206, 105);
   border-radius: 10px;
 }
+
 .accordion__question p {
   margin: 5px;
   padding: 0;
   font-family: Verdana;
   font-size: 20px;
 }
+
 .accordion__answer p {
   margin: 5px;
   padding: 10px;
@@ -76,12 +93,15 @@ h3{
   background: rgb(82, 170, 122);
   border-radius: 10px;
 }
+
 .accordion:hover {
   cursor: pointer;
 }
+
 .accordion__answer {
   display: none;
 }
+
 .accordion.active .accordion__answer {
   display: block;
 }
@@ -141,7 +161,7 @@ h1 {
 
 @media screen and (max-width: 640px) {
   .card-carousel {
-      margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
   }
 }
 
@@ -178,25 +198,24 @@ h1 {
 
 
 .card:nth-of-type(1) .image-container {
-  background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
+  background-image: url("../../images/fotos-perfil-usuarios/user1.jpeg");
 }
 
 .card:nth-of-type(2) .image-container {
-  background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+  background-image: url("../../images/fotos-perfil-usuarios/user2.jpg");
 }
 
 .card:nth-of-type(3) .image-container {
-  background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+  background-image: url("../../images/fotos-perfil-usuarios/user3.jpeg");
 }
 
 .card:nth-of-type(4) .image-container {
-  background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+  background-image: url("../../images/fotos-perfil-usuarios/user4.jpeg");
 }
 
 .card:nth-of-type(5) .image-container {
-  background-image: url("https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg")
+  background-image: url("../../images/fotos-perfil-usuarios/user5.jpg");
 }
-
 
 
 .image-container {
