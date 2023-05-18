@@ -50,13 +50,27 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../images/Fotos1/ALUMNADO\ IDIOMAS.JPG');
-  background-size: cover;
-  filter: brightness(60%) contrast(80%);
+  background-image: url('../../images/Fotos1/ALUMNADO\ IDIOMAS.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(40%) contrast(80%);
 }
 
-.is-z-preference {
+
+.is-z-preference{
   z-index: 1;
+}
+
+@media screen and (min-width: 769px), print {
+  .hero.is-big .hero-body {
+    padding: 14rem 6rem;
+  }
+}
+
+@media screen and (max-width: 769px), print {
+  .hero.is-big .hero-body {
+    padding: 10rem 6rem;
+  }
 }
 
 /*faq*/

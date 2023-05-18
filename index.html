@@ -53,7 +53,7 @@
 
 <body>
   <!--Start of section "Landing"-->
-  <section class="hero is-medium is-link custom-bg">
+  <section class="hero is-big custom-bg is-link">
     <div class="hero-body is-z-preference">
       <p class="title">
         <span class="is-bold">CUATROVIENTOS</span>
@@ -592,6 +592,288 @@
     </div>
     <section>
       <!--End of section "FAQ"-->
+
+      <section class="section">
+        <div class="container">
+          <h2 class="title has-text-centered">Ready to Take the Oxford Test of English?</h2>
+          <p class="subtitle has-text-centered">Start your language journey today!</p>
+          <div class="box">
+            <form class="shadow-ontop-effect p-5" name="user_details">
+              <div class="columns">
+                <div class="column">
+                  <div class="field mb-5">
+                    <label class="label">Name</label>
+                    <div class="control">
+                      <input class="input validation_basic" type="text" placeholder="Enter your name" name="name">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label">Surname1</label>
+                    <div class="control">
+                      <input class="input validation_basic" type="text" placeholder="Enter your first surname"
+                        name="surname1">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label">DNI</label>
+                    <div class="control">
+                      <input class="input" id="dni_validation" type="text" placeholder="Enter your DNI" name="dni">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label">Phone Number</label>
+                    <div class="control">
+                      <input class="input" id="phone_validation" type="text" placeholder="Enter your phone number"
+                        name="phoneNumber">
+                    </div>
+                  </div>
+
+                  <label class="label">Select FIle</label>
+                  <div id="file-js-example" class="file has-name mb-5">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                      <span class="file-name">
+                        No file uploaded
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="field mb-5">
+                    <label class="label">Surname2</label>
+                    <div class="control">
+                      <input class="input validation_basic" type="text" placeholder="Enter your second surname"
+                        name="surname2">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label">Birth Date</label>
+                    <div class="control">
+                      <input class="input" id="birth_validation" type="date" name="birthDate">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label">Email Address</label>
+                    <div class="control">
+                      <input class="input" id="email_validation" type="email" placeholder="Enter your email address"
+                        name="email">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label" id="name-label">
+                      Name
+                      <span class="icon is-clickable">
+                        <!--onclick="showHelp()"-->
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                    </label>
+                    <div class="control">
+                      <input class="input" id="enrollment_validation" type="date" name="startDate">
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label" id="name-label">
+                      Name
+                      <span class="icon is-clickable">
+                        <!--onclick="showHelp()"-->
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                    </label>
+
+                    <div class="select">
+                      <select id="courses" name="coursesFP">
+                        <option value="">--Select a course--</option>
+                        <option value="Not Enrolled">Not Enrolled</option>
+                        <option value="FPB">FPB</option>
+                        <option value="FPE">FPE</option>
+                        <option value="GA 1º">GA 1º</option>
+                        <option value="GA 2º">GA 2º</option>
+                        <option value="AC 1º">AC 1º</option>
+                        <option value="AC 2º">AC 2º</option>
+                        <option value="SMR 1º">SMR 1º</option>
+                        <option value="SMR 2º">SMR 2º</option>
+                        <option value="AF 1º">AF 1º</option>
+                        <option value="AF 2º">AF 2º</option>
+                        <option value="CI 1º">CI 1º</option>
+                        <option value="CI 2º">CI 2º</option>
+                        <option value="TL 1º">TL 1º</option>
+                        <option value="TL 2º">TL 2º</option>
+                        <option value="TL ONLINE">TL ONLINE</option>
+                        <option value="GVEC 1º">GVEC 1º</option>
+                        <option value="GVEC 2º">GVEC 2º</option>
+                        <option value="ASIR 1º">ASIR 1º</option>
+                        <option value="ASIR 2º">ASIR 2º</option>
+                        <option value="DAM 1º">DAM 1º</option>
+                        <option value="DAM 2º">DAM 2º</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+                  <div class="field mb-5" data-radio-set="2">
+                    <label class="label">Are you an old student?</label>
+                    <div class="field">
+                      <input type="radio" name="old_student" class="radioUpgraded" id="radioCustom3" />
+                      <label for="radioCustom3" class="button is-link is-light">Yes</label>
+
+                      <input type="radio" name="old_student" class="radioUpgraded" id="radioCustom4" />
+                      <label for="radioCustom4" class="button is-link is-light">No</label>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+
+
+
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Continue</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light">Reset</button>
+                </div>
+              </div>
+
+            </form>
+
+            <form class="shadow-ontop-effect p-5" name="user_course_details" style="display: none;">
+              <div class="columns">
+                <div class="column">
+
+                  <div class="field mb-5" data-radio-set="1">
+                    <label class="label">Course_weekdays</label>
+                    <div class="field">
+                      <input type="radio" name="course_weekdays" class="radioUpgraded" id="radioCustom1" />
+                      <label for="radioCustom1" class="button is-link is-light">Lunes y miércoles</label>
+
+                      <input type="radio" name="course_weekdays" class="radioUpgraded" id="radioCustom2" />
+                      <label for="radioCustom2" class="button is-link is-light">Martes y jueves</label>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="field mb-5">
+                    <label class="label" id="name-label">
+                      Name
+                      <span class="icon is-clickable">
+                        <!--onclick="showHelp()"-->
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                    </label>
+                    <div class="select">
+                      <select name="courseHours">
+                        <option value="">--Select a range of Hours-- </option>
+                        <option value="A2">A2</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+
+                </div>
+
+                <div class="column">
+                  <div class="field mb-5" data-radio-set="3">
+                    <label class="label">Type of Payment</label>
+                    <div class="field">
+                      <input type="radio" name="payment_type" class="radioUpgraded" id="radioCustom5" />
+                      <label for="radioCustom5" class="button is-link is-light">Monthly</label>
+
+                      <input type="radio" name="payment_type" class="radioUpgraded" id="radioCustom6" />
+                      <label for="radioCustom6" class="button is-link is-light">One Time Payment</label>
+                    </div>
+                  </div>
+
+                  <div class="field mb-5">
+                    <label class="label" id="name-label">
+                      Name
+                      <span class="icon is-clickable">
+                        <!--onclick="showHelp()"-->
+                        <i class="fas fa-question-circle"></i>
+                      </span>
+                    </label>
+                    <div class="select">
+                      <select id="course" name="englishCourse" disabled>
+                        <option value="">--Select a course--</option>
+
+                      </select>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              <div class="field mb-5">
+                <div class="control">
+                  <label class="checkbox" id="name-label">
+                    <input type="checkbox">
+                    I accept the payment policies
+                    <span class="icon is-clickable">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field mb-5">
+                <div class="control">
+                  <label class="checkbox" id="name-label">
+                    <input type="checkbox">
+                    I accept the payment policies
+                    <span class="icon is-clickable">
+                      <i class="fas fa-question-circle"></i>
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link">Continue</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light" id="returnBtn">Back</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light">Reset</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <script src="./form.js" type="module"></script>
+      <script src="./helpers.js" type="module"></script>
 
       <script>
         let collection = document.getElementsByClassName("is-faq");
