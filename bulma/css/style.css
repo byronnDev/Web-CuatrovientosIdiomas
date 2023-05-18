@@ -1,8 +1,31 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat;:300,400,600,700,800|Source+Sans+Pro:300,400,600,700);
 
+/* Disable scrollbar for form.html */
+html#formscrollbar {
+  overflow: hidden;
+}
+
 /* Scroll smooth */
 html {
   scroll-behavior: smooth;
+}
+
+/* Better scrollbars */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* Counter */
@@ -53,21 +76,23 @@ h3 {
   background-image: url('../../images/Fotos1/ALUMNADO\ IDIOMAS.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(40%) contrast(80%);
+  filter: saturate(120%) blur(2.5px) brightness(40%) contrast(80%);
 }
 
 
-.is-z-preference{
+.is-z-preference {
   z-index: 1;
 }
 
-@media screen and (min-width: 769px), print {
+@media screen and (min-width: 769px),
+print {
   .hero.is-big .hero-body {
     padding: 14rem 6rem;
   }
 }
 
-@media screen and (max-width: 769px), print {
+@media screen and (max-width: 769px),
+print {
   .hero.is-big .hero-body {
     padding: 10rem 6rem;
   }
@@ -271,4 +296,29 @@ h1 {
 
 .h2car a {
   color: #f5b916
+}
+
+/*! TODO postion */
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  color: #f5b916;
+}
+
+footer span {
+  /* bold */
+  font-weight: 700;
+}
+
+#footer {
+  margin: -10rem -10rem;
 }

@@ -1,5 +1,4 @@
 // Courses section
-
 // Al dar click al subtitle is-active que se oculte o muestre el contenido de la sección con is-hidden
 const subtitles = document.getElementsByClassName('subtitle is-active');
 for (let i = 0; i < subtitles.length; i++) {
@@ -33,6 +32,22 @@ for (let i = 0; i < infoIcons.length; i++) {
         messageBody.classList.toggle('is-hidden');
     });
 }
+
+// More info button on the Course Details page in FAQ section
+let collection = document.getElementsByClassName("is-faq");
+Array.from(collection).forEach(element => {
+    element.addEventListener("mousedown", function () {
+        if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
+            element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
+        } else {
+            element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
+        }
+    });
+    // mouseover
+    element.addEventListener("mouseover", function () {
+        element.style.cursor = "pointer";
+    });
+});
 
 // Burger menu
 const burger = document.getElementsByClassName('navbar-burger')[0]; // Find the burger

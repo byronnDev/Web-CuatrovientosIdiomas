@@ -1,118 +1,118 @@
 // showHelp for English level
 function showHelp() {
-    const helpText = document.getElementById('help');
-    helpText.classList.toggle('is-hidden');
+  const helpText = document.getElementById('help');
+  helpText.classList.toggle('is-hidden');
 }
 
 
 import {
-    stripe,
-    dangerOnValidationAppender,
-    dangerOnValidationAppenderRadio,
-    dangerOnValidationRemover,
-    validateForm,
-    validateForm1,
-    inputChecker,
-    clearSelectBoxOnChange,
-    clearCheckboxOnChange,
-    clearRadiosOnChecked,
-    updatePriceText,
-    handleSelection
+  stripe,
+  dangerOnValidationAppender,
+  dangerOnValidationAppenderRadio,
+  dangerOnValidationRemover,
+  validateForm,
+  validateForm1,
+  inputChecker,
+  clearSelectBoxOnChange,
+  clearCheckboxOnChange,
+  clearRadiosOnChecked,
+  updatePriceText,
+  handleSelection
 } from "./helpers.js";
 
 
 const productsData = {
-        "01": {
-            "productId": "price_1N2zMdASksDI5wteY4NTvonC",
-            "price": "75",
-        },
-        "02": {
-            "productId": "price_1N2zM3ASksDI5wtehOpnso4v",
-            "price": "50",
-        },
-        "03": {
-            "productId": "price_1N2zLEASksDI5wteR34yl20j",
-            "price": "380",
-        },
-        "04": {
-            "productId": "price_1N2zMPASksDI5wteK8UZaOO4",
-            "price": "550",
-        }
+  "01": {
+    "productId": "price_1N2zMdASksDI5wteY4NTvonC",
+    "price": "75",
+  },
+  "02": {
+    "productId": "price_1N2zM3ASksDI5wtehOpnso4v",
+    "price": "50",
+  },
+  "03": {
+    "productId": "price_1N2zLEASksDI5wteR34yl20j",
+    "price": "380",
+  },
+  "04": {
+    "productId": "price_1N2zMPASksDI5wteK8UZaOO4",
+    "price": "550",
+  }
 };
 
 const coursesData = {
-        "04": {
-            "hours": "15:30 a 16:30",
-            "course": "Inglés A2 Refuerzo estudiantes FP",
-            "days": "Lunes y miércoles",
-            "price": "380 € ó 50 € mes"
-        },
-        "05": {
-            "hours": "16:30 a 18:00",
-            "course": "Inglés A2",
-            "days": "Lunes y miércoles",
-            "price": "550 € ó 75 € mes"
-        },
-        "08": {
-            "hours": "18:00 a 19:30",
-            "course": "Inglés B1.1",
-            "days": "Lunes y miércoles",
-            "price": "550 € ó 75 € mes"
-        },
-        "09": {
-            "hours": "16:30 a 18:00",
-            "course": "Inglés B1.2",
-            "days": "Martes y jueves",
-            "price": "550 € ó 75 € mes"
-        },
-        "10": {
-            "hours": "15:30 a 16:30",
-            "course": "Inglés B1 Refuerzo estudiantes FP",
-            "days": "Martes y jueves",
-            "price": "380 € ó 50 € mes"
-        },
-        "11": {
-            "hours": "15:30 a 16:30",
-            "course": "Inglés B1 Preparación Examen Oficial estudiantes FP",
-            "days": "Lunes y miércoles",
-            "price": "380 € ó 50 € mes"
-        },
-        "12": {
-            "hours": "18:00 a 19:30",
-            "course": "Inglés B1 Preparación Examen Oficial",
-            "days": "Lunes y miércoles",
-            "price": "550 € ó 75 € mes"
-        },
-        "13": {
-            "hours": "19:30 a 21:00",
-            "course": "Inglés B2.1",
-            "days": "Lunes y miércoles",
-            "price": "550 € ó 75 € mes"
-        },
-        "14": {
-            "hours": "9:30 a 11:00",
-            "course": "Inglés B2.1",
-            "days": "Martes y jueves",
-            "price": "550 € ó 75 € mes"
-        },
-        "15": {
-            "hours": "16:30 a 18:00",
-            "course": "Inglés B2.2",
-            "days": "Lunes y miércoles",
-            "price": "550 € ó 75 € mes"
-        },
-        "16": {
-            "hours": "15:30 a 16:30",
-            "course": "Inglés B2 Preparación Examen Oficial estudiantes FP",
-            "days": "Martes y jueves",
-            "price": "380 € ó 50 € mes"
-        },
-        "17": {
-            "hours": "18:00 a 19:30",
-            "course": "Inglés B2 Preparación Examen Oficial",
-            "days": "Martes y jueves",
-            "price": "550 € ó 75 € mes"
-        }
+  "04": {
+    "hours": "15:30 a 16:30",
+    "course": "Inglés A2 Refuerzo estudiantes FP",
+    "days": "Lunes y miércoles",
+    "price": "380 € ó 50 € mes"
+  },
+  "05": {
+    "hours": "16:30 a 18:00",
+    "course": "Inglés A2",
+    "days": "Lunes y miércoles",
+    "price": "550 € ó 75 € mes"
+  },
+  "08": {
+    "hours": "18:00 a 19:30",
+    "course": "Inglés B1.1",
+    "days": "Lunes y miércoles",
+    "price": "550 € ó 75 € mes"
+  },
+  "09": {
+    "hours": "16:30 a 18:00",
+    "course": "Inglés B1.2",
+    "days": "Martes y jueves",
+    "price": "550 € ó 75 € mes"
+  },
+  "10": {
+    "hours": "15:30 a 16:30",
+    "course": "Inglés B1 Refuerzo estudiantes FP",
+    "days": "Martes y jueves",
+    "price": "380 € ó 50 € mes"
+  },
+  "11": {
+    "hours": "15:30 a 16:30",
+    "course": "Inglés B1 Preparación Examen Oficial estudiantes FP",
+    "days": "Lunes y miércoles",
+    "price": "380 € ó 50 € mes"
+  },
+  "12": {
+    "hours": "18:00 a 19:30",
+    "course": "Inglés B1 Preparación Examen Oficial",
+    "days": "Lunes y miércoles",
+    "price": "550 € ó 75 € mes"
+  },
+  "13": {
+    "hours": "19:30 a 21:00",
+    "course": "Inglés B2.1",
+    "days": "Lunes y miércoles",
+    "price": "550 € ó 75 € mes"
+  },
+  "14": {
+    "hours": "9:30 a 11:00",
+    "course": "Inglés B2.1",
+    "days": "Martes y jueves",
+    "price": "550 € ó 75 € mes"
+  },
+  "15": {
+    "hours": "16:30 a 18:00",
+    "course": "Inglés B2.2",
+    "days": "Lunes y miércoles",
+    "price": "550 € ó 75 € mes"
+  },
+  "16": {
+    "hours": "15:30 a 16:30",
+    "course": "Inglés B2 Preparación Examen Oficial estudiantes FP",
+    "days": "Martes y jueves",
+    "price": "380 € ó 50 € mes"
+  },
+  "17": {
+    "hours": "18:00 a 19:30",
+    "course": "Inglés B2 Preparación Examen Oficial",
+    "days": "Martes y jueves",
+    "price": "550 € ó 75 € mes"
+  }
 };
 
 const radioSets = document.querySelectorAll('[data-radio-set]');
@@ -188,21 +188,21 @@ fileInput.onchange = () => {
 };
 
 paymentTypeInputs.forEach((input) => {
-    input.addEventListener('click', () => {
-      if (document.getElementById('radioCustom6').checked) {
-        paymentTypeGlobal = 1;
-      } else {
-        paymentTypeGlobal = 0;
-      }
-      currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
-    });
+  input.addEventListener('click', () => {
+    if (document.getElementById('radioCustom6').checked) {
+      paymentTypeGlobal = 1;
+    } else {
+      paymentTypeGlobal = 0;
+    }
+    currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
+  });
 });
 
 //Listeners
 
 formUserDetails.addEventListener('submit', (event) => {
   event.preventDefault();
-  
+
   let isInputedDataValid = inputChecker(requiredInputs, false);
   let isFormValid = validateForm(totalFilesSelected, fileInput, dni);
 
@@ -230,7 +230,7 @@ returnBtn.addEventListener('click', (event) => {
 });
 
 courseSelected.addEventListener('change', () => {
-    currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
+  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
 courseSelect.addEventListener('change', (event) => {
@@ -254,17 +254,17 @@ courseSelect.addEventListener('change', (event) => {
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
-courseWeekdays.addEventListener('change', function() {
+courseWeekdays.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
-courseHours.addEventListener('change', function() {
+courseHours.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
-coursePaymentType.addEventListener('change', function() {
+coursePaymentType.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
