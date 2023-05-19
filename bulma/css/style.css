@@ -40,6 +40,8 @@ h3 {
   box-shadow: 0 0px 50px rgba(99, 99, 99, 0.433);
 }
 
+
+
 .counter-item .counter-stat {
   font-size: 50px;
 }
@@ -321,4 +323,14 @@ footer span {
 
 #footer {
   margin: -10rem -10rem;
+}
+
+.scale {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.scale:hover {
+  transform: scale(1.06);
+  transition: all 0.2s ease-in-out;
 }

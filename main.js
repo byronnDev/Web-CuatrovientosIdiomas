@@ -10,18 +10,18 @@ for (let i = 0; i < subtitles.length; i++) {
 
 
 // More info button on the Course Details page
-const infoIcons = document.getElementsByClassName('fa-calendar-days');
+const calendarIcons = document.getElementsByClassName('fa-calendar-days');
 // Ponemos el raton como puntero
-for (let i = 0; i < infoIcons.length; i++) {
-    infoIcons[i].style.cursor = 'pointer';
-    infoIcons[i].addEventListener('mouseover', function () {
+for (let i = 0; i < calendarIcons.length; i++) {
+    calendarIcons[i].style.cursor = 'pointer';
+    calendarIcons[i].addEventListener('mouseover', function () {
         this.title = 'Show schedule';
     });
 }
 // Recorre todos los iconos de información
-for (let i = 0; i < infoIcons.length; i++) {
+for (let i = 0; i < calendarIcons.length; i++) {
     // Agrega un event listener para el evento de clic
-    infoIcons[i].addEventListener('click', function () {
+    calendarIcons[i].addEventListener('click', function () {
         // Encuentra el elemento padre que contiene el mensaje oculto
         const parentElement = this.parentNode.parentNode;
 
@@ -39,8 +39,10 @@ Array.from(collection).forEach(element => {
     element.addEventListener("mousedown", function () {
         if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
             element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
+            element.getElementsByClassName("fas")[0].classList.toggle("fa-rotate-180");
         } else {
             element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
+            element.getElementsByClassName("fas")[0].classList.toggle("fa-rotate-180");
         }
     });
     // mouseover
@@ -90,4 +92,7 @@ function translate() {
 
     xhr.send(data);
 }
+
+
+
 
