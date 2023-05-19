@@ -8,6 +8,7 @@ html#formscrollbar {
 /* Scroll smooth */
 html {
   scroll-behavior: smooth;
+  height: 80%;
 }
 
 /* Better scrollbars */
@@ -300,7 +301,6 @@ h1 {
   color: #f5b916
 }
 
-/*! TODO postion */
 /* Footer */
 footer {
   background-color: #333;
@@ -322,7 +322,12 @@ footer span {
 }
 
 #footer {
-  margin: -10rem -10rem;
+  position: absolute;
+  bottom: 0;
+  width: 102%; 
+  height: 5rem;
+  left: 0;
+  right: 0;
 }
 
 .scale {

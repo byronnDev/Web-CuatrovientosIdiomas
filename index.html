@@ -8,109 +8,136 @@
   <link rel="stylesheet" href="bulma/css/bulma.css"> <!-- Bulma CSS -->
   <link rel="stylesheet" href="./bulma/css/style.css"> <!-- Our own CSS -->
   <script src="https://kit.fontawesome.com/81e1d956bc.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
-  <title>Escuela de Idiomas</title>
+
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
+  <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        // Calendar options and settings
+        // You can customize various options such as events, header, views, etc.
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        initialView: 'dayGridMonth',
+        events: [
+          // Event data
+          // You can provide your own events data in the specified format
+          // Example:
+          {
+            title: 'Event 1',
+            start: '2023-05-20',
+            end: '2023-05-22',
+            display: 'background'
+          },
+          {
+            title: 'Event 2',
+            start: '2023-05-25',
+            end: '2023-05-27',
+            display: 'background',
+            backgroundColor: 'red'
+          }
+        ],
+
+      });
+
+      calendar.render();
+    });
+
+  </script>
+
+  <title>Language School</title>
 </head>
 <body>
   <header>
     <nav class="navbar is-transparent is-fixed-top has-shadow">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="./index.html">
-          <img src="./images/logoidiomas.jpg" alt="Cuatrovientos Idiomas" style="width: 100%; height: auto;">
-        </a>
-        <div class="navbar-burger" data-target="navbarExampleTransparentExample">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-  
-      <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="./index.html">
-            <span class="icon-text">
-              <span class="icon">
-                <i class="fas fa-info-circle"></i>
-              </span>
-              <span>Home</span>
-            </span>
-          </a>
-          <a class="navbar-item" href="./index.html#course-categories">
-            <span class="icon-text">
-              <span class="icon">
-                <i class="fas fa-graduation-cap"></i>
-              </span>
-              <span>Courses</span>
-            </span>
-          </a>
-          <a class="navbar-item" href="./index.html#course-categories">
-            <span class="icon-text">
-              <span class="icon">
-                <i class="fas fa-calendar-alt"></i>
-              </span>
-              <span>Calendar</span>
-            </span>
-          </a>
-          <a class="navbar-item" href="./index.html#FAQ">
-            <span class="icon-text">
-              <span class="icon">
-                <i class="fas fa-question-circle"></i>
-              </span>
-              <span>FAQ</span>
-            </span>
-          </a>
-        </div>
-  
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-primary" href="#form">
-                  <span class="icon">
-                    <i class="fas fa-user"></i>
-                  </span>
-                  <span>Inscribe</span>
-                </a>
-              </p>
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+            <img src="./images/logoidiomas.jpg" alt="Cuatrovientos Idiomas" style="width: 100%; height: auto;">
+            </a>
+            <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
             </div>
-          </div>
-          <div class="navbar-item">
-            <div id="translator" class="select is-primary">
-              <select>
-                <!--default not selected unclicable Language-->
-                <option selected disabled>Language</option>
-                <option>English (default)</option>
-                <option>Español</option>
-                <option>French</option>
-                <option>Português</option>
-                <option>日本語</option>
-                <option>한국어</option>
-              </select>
-            </div>
-          </div>
         </div>
-      </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="./index.html#">
+                <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-home"></i>
+                </span>
+                <span>Home</span>
+                </span>
+            </a>
+            <a class="navbar-item" href="./index.html#course-categories">
+                <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </span>
+                <span>Courses</span>
+                </span>
+            </a>
+            <a class="navbar-item" href="./oxford.html">
+                <span class="icon-text">
+                <span class="icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </span>
+                <span>Oxford</span>
+                </span>
+            </a>
+            <a class="navbar-item" href="./index.html#FAQ">
+                <span class="icon-text">
+                <span class="icon">
+                    <i class="fas fa-question-circle"></i>
+                </span>
+                <span>FAQ</span>
+                </span>
+            </a>
+            </div>
+
+            <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                <p class="control">
+                    <a class="button is-primary" href="#form">
+                    <span class="icon">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span>Inscribe</span>
+                    </a>
+                </p>
+                </div>
+            </div>
+            <div class="navbar-item">
+              <div id="google_translate_element" class="select is-primary"></div>
+            </div>
+            </div>
+        </div>
     </nav>
-  </header>
-  
-
-
+</header>
   <div id="miElemento" class="oculto">
     <a class="irArriba" href="#arriba"><img class="flecha" src="./IMAGENES2/flechArriba.png" alt="flecha"></a>
   </div>
   
   <!--Start of section "Landing"-->
-  <section class="hero is-big custom-bg is-link">
+  <div class="hero is-big custom-bg is-link">
     <div class="hero-body is-z-preference has-text-centered">
       <p class="title">
         <span class="title is-bold is-1">CUATROVIENTOS IDIOMAS</span>
       </p>
       <p class="subtitle is-4">
-        ¡Te damos la bienvenida a Cuatrovientos Idiomas!<br>
-        Centro de idiomas desde 2008 con un objetivo primordial: que el alumnado aprenda <br> a comunicarse en inglés o
-        francés de forma eficaz.
+        Welcome to <span class="is-italic">Cuatrovientos Idiomas</span>!<br>
+        Language center since 2008 with a primary goal: to help students effectively learn<br> to communicate in English or French.
       </p>
     </div>
-  </section>
+  </div>
 
   <!--End of section "Landing"-->
 
@@ -120,7 +147,10 @@
       <div class="column">
         <div class="card servicios scale">
           <div class="card-content">
-            <p class="title is-3 has-text-centered">In-person classes</p>
+            <div class="content pl-6 pr-6 pb-4 has-text-centered">
+              <i class="fas fa-chalkboard-teacher fa-3x"></i>
+            </div>
+            <h2 class="title is-5 has-text-centered">In-person classes</h2>
             <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -133,7 +163,10 @@
       <div class="column">
         <div class="card servicios scale">
           <div class="card-content">
-            <p class="title is-3 has-text-centered">Online classes</p>
+            <div class="content pl-6 pr-6 pb-4 has-text-centered">
+              <i class="fas fa-laptop fa-3x"></i>
+            </div>
+            <h2 class="title is-5 has-text-centered">Online Classes</h2>
             <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -146,7 +179,11 @@
       <div class="column">
         <div class="card servicios scale">
           <div class="card-content">
-            <p class="title is-3 has-text-centered">Free trial</p>
+            <div class="content pl-6 pr-6 pb-4 has-text-centered">
+              <!-- dollar-->
+              <i class="fa-solid fa-piggy-bank fa-3x"></i>
+            </div>
+            <h2 class="title is-5 has-text-centered">Free Trial</h2>
             <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -220,6 +257,7 @@
   <!--Source Data Display: https://demo.themefisher.com/enov-bulma/-->
   <section class="section">
     <div class="container">
+      <h1 class="title has-text-centered pb-2">College Data</h1>
       <div class="columns is-multiline">
         <div class="column is-4-desktop is-6-tablet">
           <div class="counter-item has-text-centered mt-5 scale">
@@ -264,11 +302,11 @@
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
               <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
@@ -284,11 +322,11 @@
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
               <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
@@ -306,44 +344,44 @@
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
 
             <li>B2
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
 
             <li>C1
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
 
             <li>C2
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
           </ul>
         </li>
@@ -356,11 +394,11 @@
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
               <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
@@ -376,11 +414,11 @@
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
               <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
@@ -398,44 +436,44 @@
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
 
             <li>B2
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
 
             <li>C1
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
 
             <li>C2
               <span class="icon">
                 <i class="fa-regular fa-calendar-days"></i>
               </span>
-              <article class="message is-success">
+              <div class="message is-success">
                 <div class="message-body is-hidden">
                   Monday and Wednesday from 9:00 to 10:30
                 </div>
-              </article>
+              </div>
             </li>
           </ul>
         </li>
@@ -444,11 +482,8 @@
       </div>
       <div class="column">
         <!--Implement a calendar-->
-        <h2 class="title has-text-centered pb-6">Course Calendar</h2>
-        <div class="box">
-          <iframe src="https://calendar.google.com/calendar/embed"  width="600" height="400"></iframe>
-        </div>
-      </div>
+        <div id="calendar"></div>
+        
     </div>
     
   </section>
@@ -594,7 +629,7 @@
       </div>
     </div>
   
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -616,7 +651,7 @@
       </div>
     </div>
   
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -634,7 +669,7 @@
       </div>
     </div>
   
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -652,7 +687,7 @@
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -674,7 +709,7 @@ In the case of choosing the full course direct debit, if the student cancels the
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -694,7 +729,7 @@ The center reserves the right to cancel a started or unstarted course if it does
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -712,7 +747,7 @@ The center reserves the right to cancel a started or unstarted course if it does
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -732,7 +767,7 @@ Most of our language courses are conducted in-person, but we also offer online t
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -750,7 +785,7 @@ Most of our language courses are conducted in-person, but we also offer online t
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -768,7 +803,7 @@ Most of our language courses are conducted in-person, but we also offer online t
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -788,7 +823,7 @@ All Cuatrovientos Idiomas (English) students have the opportunity to take an off
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -807,7 +842,7 @@ Cuatrovientos Idiomas is an official OXFORD exam center, and throughout the cour
       </div>
     </div>
 
-    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
           <button class="card-header-icon" aria-label="more options">
@@ -826,24 +861,53 @@ At Cuatrovientos Idiomas, we also offer customized courses for companies and pro
     </div>
     </div>
   
-  </section>
+    <div class="has-text-centered mt-6">
+    <button class="button is-primary" id="readMoreButton">Read More...</button>
+  </div>
+
+  <style>
+      [id="\\:1.container"] {
+  visibility: hidden;
+}
+  </style>
+  
+  <script type="text/javascript">
+      function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+              { pageLanguage: 'en' },
+              'google_translate_element'
+          )};
+  </script>
+  
+  <script type="text/javascript"
+          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
+  <script>
+    function checkAndHideElement() {
+      var element = document.querySelector('#\\:1\\.container');
+      if (element) {
+        element.style.visibility = 'hidden';
+      }
+
+      var targetLanguageDiv = document.getElementById(':0.targetLanguage');
+      if (targetLanguageDiv) {
+        while (targetLanguageDiv.nextSibling) {
+          targetLanguageDiv.nextSibling.remove();
+        }
+      }
+    }
+    setInterval(checkAndHideElement, 1000);
+  </script>
       <!--End of section "FAQ"-->
 
       <!-- Inscription form as subform -->
-      <iframe src="./form.html" title="Formulario de inscripción" id="form" style="width:100%; height:1000px;"></iframe>
+      <iframe src="./form.html" title="Formulario de inscripción" id="form" style="width:100%; height:1350px;"></iframe>
+      
+      <!-- Footer -->
+      <iframe src="./footer.html" title="Footer" id="footer"></iframe>
+      <!-- Scripts -->
 
-      <script src="./form.js" type="module"></script>
-      <script src="./helpers.js" type="module"></script>
-
-      <script>
-        
-      </script>
-
-      <iframe src="./footer.html" title="Footer" style="width:112%; height:85px;" id="footer"></iframe>
-
-      <!--? http://eoidnamoodle.educacion.navarra.es/?time=1696111200
-      https://eoidna.educacion.navarra.es/ingles-2/programa-thats-english-en/
-      -->
       <script src="./carousel.js"></script>
       <script src="./main.js"></script>
 </body>

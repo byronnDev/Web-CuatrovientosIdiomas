@@ -1,3 +1,23 @@
+
+// FAQ section
+var readMoreButton = document.getElementById('readMoreButton');
+var faqElements = document.getElementsByClassName('is-faq');
+
+readMoreButton.addEventListener('click', function() {
+  if (!readMoreButton.classList.contains('was-opened')) {
+    for (var i = 0; i < faqElements.length; i++) {
+      faqElements[i].classList.remove('is-hidden');
+    }
+    readMoreButton.classList.add('was-opened');
+    readMoreButton.textContent = 'Read Less...';
+  } else {
+    for (var i = 5; i < faqElements.length; i++) {
+      faqElements[i].classList.add('is-hidden');
+    }
+    readMoreButton.classList.remove('was-opened');
+    readMoreButton.textContent = 'Read More...';
+  }
+});
 // Courses section
 // Al dar click al subtitle is-active que se oculte o muestre el contenido de la sección con is-hidden
 const subtitles = document.getElementsByClassName('subtitle is-active');
@@ -61,38 +81,49 @@ burger.addEventListener('click', function () {
 });
 
 // Translate API
-function translate() {
-    const langSelect = document.getElementById('translator');
-    const lang = langSelect.options[langSelect.selectedIndex].value;
-    xhr.withCredentials = true;
-    xhr.addEventListener('readystatechange', function () {
-        if (this.readyState === this.DONE) {
-            const response = JSON.parse(this.responseText);
-        }
+document.addEventListener('DOMContentLoaded', function () {
+    const selectElement = document.querySelector('#translator select');
+
+    selectElement.addEventListener('change', function (event) {
+        const selectedLanguage = event.target.value;
+        translatePage(selectedLanguage);
     });
+});
 
+function translatePage(language) {
+    const textElements = document.querySelectorAll('[data-translate]');
+    const apiKey = 'TU_CLAVE_DE_API';
 
-    // API translation
-    const data = 'q=English%20is%20hard%2C%20but%20detectably%20so';
-
-    const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener('readystatechange', function () {
-        if (this.readyState === this.DONE) {
-            console.log(this.responseText);
-        }
+    textElements.forEach(function (element) {
+        const originalText = element.dataset.translate;
+        translateText(originalText, language, apiKey)
+            .then(function (translatedText) {
+                element.textContent = translatedText;
+            })
+            .catch(function (error) {
+                console.error('Error de traducción:', error);
+            });
     });
-
-    xhr.open('POST', 'https://google-translate1.p.rapidapi.com/language/translate/v2/detect');
-    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
-    xhr.setRequestHeader('Accept-Encoding', 'application/gzip');
-    xhr.setRequestHeader('X-RapidAPI-Key', '3d5ce6dfb4mshaeeea817946dc73p17c499jsnd9561d07c12a');
-    xhr.setRequestHeader('X-RapidAPI-Host', 'google-translate1.p.rapidapi.com');
-
-    xhr.send(data);
 }
 
+// Function to translate text
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+    )
+};
 
-
-
+function checkAndHideElement() {
+    var element = document.querySelector('#\\:1\\.container');
+    if (element) {
+        element.style.visibility = 'hidden';
+    }
+    var targetLanguageDiv = document.getElementById(':0.targetLanguage');
+    if (targetLanguageDiv) {
+        while (targetLanguageDiv.nextSibling) {
+            targetLanguageDiv.nextSibling.remove();
+        }
+    }
+}
+setInterval(checkAndHideElement, 1000);
