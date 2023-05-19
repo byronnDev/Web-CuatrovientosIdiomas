@@ -1,32 +1,71 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat;:300,400,600,700,800|Source+Sans+Pro:300,400,600,700);
+
+/* Disable scrollbar for form.html */
+html#formscrollbar {
+  overflow: hidden;
+}
+
+/* Scroll smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better scrollbars */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* Counter */
-h3{
+h3 {
   font-family: "Montserrat", sans-serif;
   color: #111;
   font-weight: 800;
 }
 
+.servicios {
+  border-radius: 1rem;
+  box-shadow: 0 0px 50px rgba(99, 99, 99, 0.433);
+}
+
+
+
 .counter-item .counter-stat {
   font-size: 50px;
 }
+
 .counter-item p {
   margin-bottom: 0px;
 }
+
 /*Form*/
 .shadow-ontop-effect {
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    border-radius: 8px;
-  }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
 
-.radioUpgraded{
-    position: absolute; 
-    opacity: 0; 
-    pointer-events: none;
+.radioUpgraded {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* landing */
 .custom-bg {
-  position: relative; /* Required for ::before pseudo-element */
+  position: relative;
+  /* Required for ::before pseudo-element */
 }
 
 .custom-bg::before {
@@ -36,17 +75,33 @@ h3{
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../images/Fotos1/ALUMNADO\ IDIOMAS.JPG');
-  background-size: cover;
-  filter: brightness(60%) contrast(80%);
+  background-image: url('../../images/Fotos1/ALUMNADO\ IDIOMAS.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(120%) blur(2.5px) brightness(40%) contrast(80%);
 }
 
-.is-z-preference{
+
+.is-z-preference {
   z-index: 1;
 }
 
+@media screen and (min-width: 769px),
+print {
+  .hero.is-big .hero-body {
+    padding: 14rem 6rem;
+  }
+}
+
+@media screen and (max-width: 769px),
+print {
+  .hero.is-big .hero-body {
+    padding: 10rem 6rem;
+  }
+}
+
 /*faq*/
-.is-faq:hover{
+.is-faq:hover {
   border-bottom: 3px solid #e0e0e0;
 }
 
@@ -54,6 +109,7 @@ h3{
   width: 600px;
   margin: auto;
 }
+
 .accordion {
   padding: 10px;
   margin-top: 10px;
@@ -61,12 +117,14 @@ h3{
   background: rgb(105, 206, 105);
   border-radius: 10px;
 }
+
 .accordion__question p {
   margin: 5px;
   padding: 0;
   font-family: Verdana;
   font-size: 20px;
 }
+
 .accordion__answer p {
   margin: 5px;
   padding: 10px;
@@ -76,12 +134,15 @@ h3{
   background: rgb(82, 170, 122);
   border-radius: 10px;
 }
+
 .accordion:hover {
   cursor: pointer;
 }
+
 .accordion__answer {
   display: none;
 }
+
 .accordion.active .accordion__answer {
   display: block;
 }
@@ -141,7 +202,7 @@ h1 {
 
 @media screen and (max-width: 640px) {
   .card-carousel {
-      margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
   }
 }
 
@@ -178,25 +239,24 @@ h1 {
 
 
 .card:nth-of-type(1) .image-container {
-  background-image: url("https://static.addtoany.com/images/dracaena-cinnabari.jpg");
+  background-image: url("../../images/fotos-perfil-usuarios/user1.jpeg");
 }
 
 .card:nth-of-type(2) .image-container {
-  background-image: url("https://www.w3schools.com/w3css/img_lights.jpg")
+  background-image: url("../../images/fotos-perfil-usuarios/user2.jpg");
 }
 
 .card:nth-of-type(3) .image-container {
-  background-image: url("https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+  background-image: url("../../images/fotos-perfil-usuarios/user3.jpeg");
 }
 
 .card:nth-of-type(4) .image-container {
-  background-image: url("https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500")
+  background-image: url("../../images/fotos-perfil-usuarios/user4.jpeg");
 }
 
 .card:nth-of-type(5) .image-container {
-  background-image: url("https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg")
+  background-image: url("../../images/fotos-perfil-usuarios/user5.jpg");
 }
-
 
 
 .image-container {
@@ -238,4 +298,39 @@ h1 {
 
 .h2car a {
   color: #f5b916
+}
+
+/*! TODO postion */
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:hover {
+  color: #f5b916;
+}
+
+footer span {
+  /* bold */
+  font-weight: 700;
+}
+
+#footer {
+  margin: -10rem -10rem;
+}
+
+.scale {
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
+}
+
+.scale:hover {
+  transform: scale(1.06);
+  transition: all 0.2s ease-in-out;
 }

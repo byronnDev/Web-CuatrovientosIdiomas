@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bulma/css/bulma.css"> <!-- Bulma CSS -->
   <link rel="stylesheet" href="./bulma/css/style.css"> <!-- Our own CSS -->
-  <script src="https://kit.fontawesome.com/9ad3ec13bd.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/81e1d956bc.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
   <title>Escuela de Idiomas</title>
 </head>
 <header>
@@ -26,18 +26,41 @@
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="./index.html">
-          Home
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-info-circle"></i>
+            </span>
+            <span>Home</span>
+          </span>
         </a>
         <a class="navbar-item" href="./index.html#course-categories">
-          Courses
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-graduation-cap"></i>
+            </span>
+            <span>Courses</span>
+        </a>
+        <a class="navbar-item" href="./index.html#course-categories">
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+            <span>Calendar</span>
+        </a>
+        <a class="navbar-item" href="./index.html#FAQ">
+          <span class="icon-text">
+            <span class="icon">
+              <i class="fas fa-question-circle"></i>
+            </span>
+            <span>FAQ</span>
         </a>
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button is-primary" href="./form.html">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <a class="button is-primary" href="#form">
                 <span class="icon">
                   <i class="fas fa-user"></i>
                 </span>
@@ -47,21 +70,38 @@
           </div>
         </div>
       </div>
+      <div class="navbar-item">
+        <div id="translator" class="select is-primary">
+          <select>
+            <!--default not selected unclicable Language-->
+              <option selected disabled>Language</option>
+              <option>English (default)</option>
+              <option>Español</option>
+              <option>French</option>
+              <option>Português</option>
+              <option>日本語</option>
+              <option>한국어</option>
+            </select>
+          </div>
+        </div>
     </div>
   </nav>
 </header>
 
 <body>
+  <div id="miElemento" class="oculto">
+    <a class="irArriba" href="#arriba"><img class="flecha" src="./IMAGENES2/flechArriba.png" alt="flecha"></a>
+  </div>
+  
   <!--Start of section "Landing"-->
-  <section class="hero is-medium is-link custom-bg">
-    <div class="hero-body is-z-preference">
+  <section class="hero is-big custom-bg is-link">
+    <div class="hero-body is-z-preference has-text-centered">
       <p class="title">
-        <span class="is-bold">CUATROVIENTOS</span>
-        IDIOMAS
+        <span class="title is-bold is-1">CUATROVIENTOS IDIOMAS</span>
       </p>
-      <p class="subtitle">
-        ¡Te damos la bienvenida a Cuatrovientos Idiomas!
-        Centro de idiomas desde 2008 con un objetivo primordial: que el alumnado aprenda a comunicarse en inglés o
+      <p class="subtitle is-4">
+        ¡Te damos la bienvenida a Cuatrovientos Idiomas!<br>
+        Centro de idiomas desde 2008 con un objetivo primordial: que el alumnado aprenda <br> a comunicarse en inglés o
         francés de forma eficaz.
       </p>
     </div>
@@ -70,18 +110,13 @@
   <!--End of section "Landing"-->
 
   <!--Start of section "Our Services"-->
-  <section class="section">
+  <section class="section mt-6">
     <div class="columns">
       <div class="column">
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-            </figure>
-          </div>
+        <div class="card servicios scale">
           <div class="card-content">
-            <p class="title is-4 has-text-centered">John Smith</p>
-            <div class="content">
+            <p class="title is-3 has-text-centered">In-person classes</p>
+            <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="#">#css</a> <a href="#">#responsive</a>
@@ -92,21 +127,10 @@
         </div>
       </div>
       <div class="column">
-        <div class="card">
+        <div class="card servicios scale">
           <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4 has-text-centered">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
-              </div>
-            </div>
-
-            <div class="content">
+            <p class="title is-3 has-text-centered">Online classes</p>
+            <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="#">#css</a> <a href="#">#responsive</a>
@@ -117,21 +141,10 @@
         </div>
       </div>
       <div class="column">
-        <div class="card">
+        <div class="card servicios scale">
           <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">John Smith</p>
-                <p class="subtitle is-6">@johnsmith</p>
-              </div>
-            </div>
-
-            <div class="content">
+            <p class="title is-3 has-text-centered">Free trial</p>
+            <div class="content pl-6 pr-6 pb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="#">#css</a> <a href="#">#responsive</a>
@@ -152,21 +165,21 @@
       <h2 class="title has-text-centered pb-6">Why Enroll in Our Academy?</h2>
       <div class="columns is-centered">
         <div class="column is-one-third">
-          <div class="box has-text-centered">
+          <div class="box has-text-centered scale">
             <i class="fas fa-chalkboard-teacher fa-3x"></i>
             <h3 class="title is-5">Expert Teachers</h3>
             <p>Our experienced teachers are dedicated to helping you achieve your language goals.</p>
           </div>
         </div>
         <div class="column is-one-third">
-          <div class="box has-text-centered">
+          <div class="box has-text-centered scale">
             <i class="fas fa-users fa-3x"></i>
             <h3 class="title is-5">Small Class Sizes</h3>
             <p>We keep our class sizes small to ensure personalized attention and effective learning.</p>
           </div>
         </div>
         <div class="column is-one-third">
-          <div class="box has-text-centered">
+          <div class="box has-text-centered scale">
             <i class="fas fa-globe-americas fa-3x"></i>
             <h3 class="title is-5">Global Perspective</h3>
             <p>Our curriculum is designed to give you a global perspective on the English language.</p>
@@ -175,14 +188,14 @@
       </div>
       <div class="columns is-centered">
         <div class="column is-one-third">
-          <div class="box has-text-centered">
+          <div class="box has-text-centered scale">
             <i class="fas fa-graduation-cap fa-3x"></i>
             <h3 class="title is-5">Accredited Courses</h3>
             <p>Our courses are accredited and recognized by leading institutions and organizations.</p>
           </div>
         </div>
         <div class="column is-one-third">
-          <div class="box has-text-centered">
+          <div class="box has-text-centered scale">
             <i class="fas fa-comments fa-3x"></i>
             <h3 class="title is-5">Interactive Learning</h3>
             <p>Our classes are designed to be interactive and engaging, with plenty of opportunities for discussion and
@@ -190,7 +203,7 @@
           </div>
         </div>
         <div class="column is-one-third">
-          <div class="box has-text-centered">
+          <div class="box has-text-centered scale">
             <i class="fas fa-ban fa-3x"></i>
             <h3 class="title is-5">No Commitment Necessary</h3>
             <p>You can cancel your enrollment at any time with no penalty or commitment.</p>
@@ -207,19 +220,19 @@
     <div class="container">
       <div class="columns is-multiline">
         <div class="column is-4-desktop is-6-tablet">
-          <div class="counter-item has-text-centered mt-5">
+          <div class="counter-item has-text-centered mt-5 scale">
             <h3 class="mb-0"><span class="counter-stat">1730</span> +</h3>
             <p class="text-muted">Students Enrolled</p>
           </div>
         </div>
         <div class="column is-4-desktop is-6-tablet">
-          <div class="counter-item has-text-centered mt-5">
+          <div class="counter-item has-text-centered mt-5 scale">
             <h3 class="mb-0"><span class="counter-stat">98</span>%</h3>
             <p class="text-muted">Students Certificated</p>
           </div>
         </div>
         <div class="column is-4-desktop is-6-tablet">
-          <div class="counter-item has-text-centered mt-5">
+          <div class="counter-item has-text-centered mt-5 scale">
             <h3 class="mb-0"><span class="counter-stat">20</span></h3>
             <p class="text-muted">Years Experience</p>
           </div>
@@ -235,61 +248,208 @@
 
   <!--Start of section "Our Courses"-->
   <section class="section" id="course-categories">
+    <div class="columns">
+      <div class="column">
+        <h2 class="title has-text-centered pb-6">Available Courses</h2>
+      
     <!--C1, C2, B1, B2 menu-->
     <aside class="menu">
-      <p class="menu-label">
-        Course categories
-      </p>
       <ul class="menu-list">
-        <li class=""><a class="title is-active">English</a>
+        <li>
+          <a class="subtitle is-active">English <i class="fas fa-angle-down"></i></a>
           <ul>
             <li>A1
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand and use familiar everyday expressions and very basic phrases aimed at the
                   satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
                   questions about personal details such as where you live, people you know and things you have. You can
                   interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
-                  <a href="#">Learn more</a>
                 </div>
               </article>
+              -->
             </li>
             <li>A2
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand sentences and frequently used expressions related to areas of most immediate
                   relevance (e.g. very basic personal and family information, shopping, local geography, employment).
                   You can communicate in simple and routine tasks requiring a simple and direct exchange of information
                   on familiar and routine matters. You can describe in simple terms aspects of your background,
-                  immediate environment and matters in areas of immediate need. <a href="#">Learn more</a>
+                  immediate environment and matters in areas of immediate need.
+                </div>
+              </article>
+              -->
+            </li>
+
+            <li>B1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>B2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
                 </div>
               </article>
             </li>
           </ul>
         </li>
+
+        <!--TODO FRENCH-->
         <li>
-          <a class="title is-active">French</a>
+          <a class="subtitle is-active">French <i class="fas fa-angle-down"></i></a>
           <ul>
             <li>A1
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+              <article class="message is-info">
+                <div class="message-body is-hidden">
+                  You can understand and use familiar everyday expressions and very basic phrases aimed at the
+                  satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
+                  questions about personal details such as where you live, people you know and things you have. You can
+                  interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
+                </div>
+              </article>
+              -->
             </li>
+            <li>A2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+              <article class="message is-info">
+                <div class="message-body is-hidden">
+                  You can understand sentences and frequently used expressions related to areas of most immediate
+                  relevance (e.g. very basic personal and family information, shopping, local geography, employment).
+                  You can communicate in simple and routine tasks requiring a simple and direct exchange of information
+                  on familiar and routine matters. You can describe in simple terms aspects of your background,
+                  immediate environment and matters in areas of immediate need.
+                </div>
+              </article>
+              -->
+            </li>
+
+            <li>B1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
             <li>B2
               <span class="icon">
-                <i class="fas fa-info-circle"></i>
+                <i class="fa-regular fa-calendar-days"></i>
               </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C1
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
+            </li>
+
+            <li>C2
+              <span class="icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+              <article class="message is-success">
+                <div class="message-body is-hidden">
+                  Monday and Wednesday from 9:00 to 10:30
+                </div>
+              </article>
             </li>
           </ul>
         </li>
       </ul>
     </aside>
+      </div>
+      <div class="column">
+        <!--Implement a calendar-->
+        <h2 class="title has-text-centered pb-6">Course Calendar</h2>
+        <div class="box">
+          <iframe src="https://calendar.google.com/calendar/embed" width="600" height="400"
+            frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+    
   </section>
   <!--End of section "Our Courses"-->
 
@@ -333,211 +493,351 @@
   <!--End of section "Students Reviews"-->
 
 
-  <!--Start of section "FAQ"-->
-  <section class="section">
+  <section class="section" id="FAQ">
     <h1 class="title has-text-centered">FAQs</h1>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
-
           <button class="card-header-icon" aria-label="more options">
             <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </button>
-
-          <p class="card-header-title is-size-4">
-            How can I enroll in a Cuatrovientos Idiomas course?
-          </p>
+          <p class="card-header-title is-size-4">How can I enroll in a Cuatrovientos Idiomas course?</p>
         </header>
-
         <div class="card-content pt-0 is-hidden">
           <div class="content">
             First of all, it is recommended that you take the online level test that is available on our website.<br>
             It is free and does not commit you to anything.<br>
-            Registration is done online from our website by accessing the form through REGISTRATION and filling in the
-            fields with your information. However, you can also access it by clicking HERE. Once you submit it, you will
-            receive a copy by email, and your spot will be confirmed through email.
+            Registration is done online from our website by accessing the form through REGISTRATION and filling in the fields with your information. However, you can also access it by clicking <a href="#">HERE</a>. Once you submit it, you will receive a copy by email, and your spot will be confirmed through email.
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
-
           <button class="card-header-icon" aria-label="more options">
             <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </button>
-
-          <p class="card-header-title is-size-4">
-            How many levels are there in the academy?
-          </p>
+          <p class="card-header-title is-size-4">How many levels are there in the academy?</p>
         </header>
-
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Our courses are adapted to the Common European Framework of Reference for Languages, and therefore the
-            levels are:
-            <li>A1, A2: Basic or Elementary level.</li>
-            <li>B1, B2: Intermediate level.</li>
-            <li>C1, C2: Advanced level.</li>
+            Our courses are adapted to the Common European Framework of Reference for Languages, and therefore the levels are:
+            <ul>
+              <li>A1, A2: Basic or Elementary level.</li>
+              <li>B1, B2: Intermediate level.</li>
+              <li>C1, C2: Advanced level.</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
-
           <button class="card-header-icon" aria-label="more options">
             <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </button>
-
-          <p class="card-header-title is-size-4">
-            Are there free trial sessions available?
-          </p>
+          <p class="card-header-title is-size-4">Are there free trial sessions?</p>
         </header>
-
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Yes, you can come and try a first class completely FREE of charge, with no obligation. Request it by clicking HERE.
+            Without any commitment, you can come and try a first class completely FREE. Request it by clicking <a href="#">HERE</a>.
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
-
           <button class="card-header-icon" aria-label="more options">
             <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </button>
-
-          <p class="card-header-title is-size-4">
-            Can I enroll at any time of the year?
-          </p>
+          <p class="card-header-title is-size-4">Can I enroll at any time of the year?</p>
         </header>
-
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Although it is highly recommended to enroll at the beginning of the course in October, you can enroll at any time of the year. If you wish to enroll after the course has started, it is highly advisable to take the level test beforehand as we mentioned before, in order to assign you to a suitable group for you.
+            Although it is highly recommended to enroll to start the course in October, you can enroll at any time of the year. If you wish to enroll after the course has started, it is advisable to take the level test beforehand, as mentioned before, to assign you to an appropriate group.
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
-
           <button class="card-header-icon" aria-label="more options">
             <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </button>
-
-          <p class="card-header-title is-size-4">
-            Component
-          </p>
+          <p class="card-header-title is-size-4">Do I have to start at the beginning of the month?</p>
         </header>
-
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+            No. However, the monthly fee is paid in full, regardless of the day you join the classes.
           </div>
         </div>
       </div>
     </div>
-
-    <div class="container is-max-desktop is-faq p-0  my-0 bottom-border">
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
-
           <button class="card-header-icon" aria-label="more options">
             <span class="icon">
               <i class="fas fa-angle-down" aria-hidden="true"></i>
             </span>
           </button>
-
-          <p class="card-header-title is-size-4">
-            Component
-          </p>
+          <p class="card-header-title is-size-4">How much do the courses cost and how is the payment made?</p>
         </header>
-
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+            The payment will be made through DIRECT DEBIT from a bank account once the classes have started, taking into account that the amount varies depending on the specific course you enroll in and the chosen payment method from the following:
+            <ul>
+              <li>Monthly direct debit that will be charged at the beginning of each month (from October to May). It will be €75 or €50, depending on the chosen course.</li>
+              <li>Full course direct debit that will be charged at the beginning of October (with the discount already included). It will be €550 or €380, depending on the chosen course.</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <section>
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">Are there any discounts or promotions?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            If you pay the course in a single payment, you will receive a discount already included in the price.
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">Do I have to pay registration fee and textbooks or other materials?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            There is no registration fee. As for textbooks, the teacher will indicate the materials to be used at the beginning of the course, and you will need to purchase them on your own.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">Can I cancel my enrollment at any time?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            There is no commitment or penalty; you can cancel your enrollment at any time, but please note that no refunds will be issued for any amount already paid.
+To request cancellation, you must NOTIFY us by sending an email to idiomas@cuatrovientos.org. The cancellation will be valid to avoid charging the direct debit ONLY if it is communicated BEFORE THE 25TH DAY OF THE PREVIOUS MONTH. Students who stop attending classes without notifying the cancellation as indicated will be responsible for the direct debit. If the direct debit is returned, it will remain pending for payment with any associated return fees.
+(Example: if I do not intend to attend classes in March, I must notify it to idiomas@cuatrovientos.org before February 25th)
+In the case of choosing the full course direct debit, if the student cancels the enrollment, there will be NO refund (UNLESS DULY JUSTIFIED FORCE MAJEURE REASONS).
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">How many students are there per group?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            The number of students per class is between 8 and 14 students.
+The center reserves the right to cancel a started or unstarted course if it does not reach the minimum number of students. However, students will always be offered the opportunity to join another face-to-face or online group.
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">How is my progress evaluated?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            Throughout the course, the teacher proposes different activities, tasks, and tests to monitor the teaching-learning process. The materials used in these courses also provide tools for self-evaluation of progress. At the end of the course, the teachers prepare a personalized report for each student, briefly discussing their achievements, areas for improvement, and the level attained.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">What types of courses are available?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            We offer general English and French courses, as well as courses for official exam preparation. We also offer English and French reinforcement courses specifically for students in vocational training programs.
+Most of our language courses are conducted in-person, but we also offer online training. If you are interested in online courses, we will provide you with more information.
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">When does the course start and end?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            The course starts in October and ends in May. You can download the calendar by clicking HERE.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">What is the objective of our courses?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            The objective of our courses is to provide enjoyable and effective language training to our students so that they can achieve their personal goals by the end of the course, whether it is to improve their overall language skills or to obtain certification through an official exam.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">Do these courses provide any official certification?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            At the end of the course, the teachers prepare a personalized report indicating the achievements, areas for improvement, and the level attained. Any student can also request a certificate of achievement, which includes the number of hours invested during the course. However, please note that this certificate is not an official certification.
+All Cuatrovientos Idiomas (English) students have the opportunity to take an official exam at our center, as we are accredited as an Official OXFORD TEST OF ENGLISH Exam Center.
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">What if I want to prepare for an official exam?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+            The level test is very important to determine if you are ready to start a course for the specific exam you need. Our language teachers have extensive experience in preparing students for official exams, and they will help you decide if you are prepared for it.
+Cuatrovientos Idiomas is an official OXFORD exam center, and throughout the course, we organize different exam sessions open to the public. We also offer intensive preparatory courses so that candidates can become familiar with the exam format and how to approach it with the utmost confidence.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
+      <div class="card">
+        <header class="card-header-no-border">
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+          <p class="card-header-title is-size-4">Who are our courses for?</p>
+        </header>
+        <div class="card-content pt-0 is-hidden">
+          <div class="content">
+Cuatrovientos Idiomas courses are designed for young people and adults who want to start or continue their learning of English or French. We also offer courses for those interested in preparing for an official language certification exam, as well as for students in vocational training programs, high school, or university who need to catch up in order to pass a subject or module at the end of the course.
+At Cuatrovientos Idiomas, we also offer customized courses for companies and professionals who need to improve their language skills in a workplace environment.
+        </div>
+      </div>
+    </div>
+  
+  </section>
       <!--End of section "FAQ"-->
 
+      <!-- Inscription form as subform -->
+      <iframe src="./form.html" title="Formulario de inscripción" id="form" width="100%" height="1000px"></iframe>
+
+      <script src="./form.js" type="module"></script>
+      <script src="./helpers.js" type="module"></script>
+
       <script>
-        let collection = document.getElementsByClassName("is-faq");
-        Array.from(collection).forEach(element => {
-          element.addEventListener("mousedown", function () {
-            if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
-              element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
-            } else {
-              element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
-            }
-          });
-
-        });
-
-
-        // More info button on the Course Details page
-        // Obtén todos los elementos con la clase 'fa-info-circle'
-        const infoIcons = document.getElementsByClassName('fa-info-circle');
-        // Ponemos el raton como puntero
-        for (let i = 0; i < infoIcons.length; i++) {
-          infoIcons[i].style.cursor = 'pointer';
-        }
-        // Recorre todos los iconos de información
-        for (let i = 0; i < infoIcons.length; i++) {
-          // Agrega un event listener para el evento de clic
-          infoIcons[i].addEventListener('click', function () {
-            // Encuentra el elemento padre que contiene el mensaje oculto
-            const parentElement = this.parentNode.parentNode;
-
-            // Encuentra el mensaje oculto dentro del elemento padre
-            const messageBody = parentElement.querySelector('.message-body');
-
-            // Alterna la visibilidad del mensaje oculto agregando o quitando la clase 'is-hidden'
-            messageBody.classList.toggle('is-hidden');
-          });
-        }
-
+        
       </script>
 
-      <footer>
-        <div id="translator" class="select is-primary">
-          <select>
-            <option>Language</option>
-            <option>English (default)</option>
-            <option>Español</option>
-            <option>Português</option>
-            <option>中文</option>
-            <option>日本語</option>
-            <option>한국어</option>
-          </select>
-        </div>
-      </footer>
+      <iframe src="./footer.html" title="Footer" width="112%" height="85px" id="footer"></iframe>
 
       <!--? http://eoidnamoodle.educacion.navarra.es/?time=1696111200
       https://eoidna.educacion.navarra.es/ingles-2/programa-thats-english-en/
