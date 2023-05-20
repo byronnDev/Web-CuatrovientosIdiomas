@@ -37,8 +37,26 @@ const productsData = {
   "04": {
     "productId": "price_1N2zMPASksDI5wteK8UZaOO4",
     "price": "550",
-  }
+  },
+  "05": {
+    "productId": "price_1N9sQiASksDI5wteP4k37jxM",
+    "price": "46",
+  },
+  "06": {
+    "productId": "price_1N9sR3ASksDI5wtevrRHcwJ5",
+    "price": "86",
+  },
+  "07": {
+    "productId": "price_1N9sRMASksDI5wteILtT3Zmm",
+    "price": "96",
+  },
+  "08": {
+    "productId": "price_1N9sRlASksDI5wtex6xWU1zC",
+    "price": "120",
+  },
+
 };
+
 
 const coursesData = {
   "04": {
@@ -143,11 +161,12 @@ let totalFilesSelected = 0;
 let paymentTypeGlobal = 0;
 let newElement;
 let currentItemSelected;
+let hasUserDoneFP = true;
 
 // RAW Function calls
-clearRadiosOnChecked('Lunes y miércoles', courseWeekdaysRadio);
+clearRadiosOnChecked(courseWeekdaysRadio);
 
-clearRadiosOnChecked('Monthly', typeOfPaymentRadio);
+clearRadiosOnChecked(typeOfPaymentRadio);
 
 clearSelectBoxOnChange(courseHoursSelectBox);
 
@@ -157,7 +176,7 @@ clearCheckboxOnChange(policiesCheckbox);
 
 clearSelectBoxOnChange(selectFPCourse);
 
-clearRadiosOnChecked('Yes', oldStudent);
+clearRadiosOnChecked(oldStudent);
 
 //Functionalities on vars gotten from DOM
 
@@ -203,12 +222,18 @@ paymentTypeInputs.forEach((input) => {
 formUserDetails.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  let isInputedDataValid = inputChecker(requiredInputs, false);
-  let isFormValid = validateForm(totalFilesSelected, fileInput, dni);
+  let isFormValid = validateForm(totalFilesSelected, fileInput, dni, email, phoneNumber, birth, enrollment);
 
-  if (isInputedDataValid && isFormValid) {
-    formUserDetails.style.display = 'none';
-    formUserCourseDetails.style.display = 'block';
+  if (isFormValid) {
+    formUserDetails.classList.add('is-hidden');
+    formUserCourseDetails.classList.remove('is-hidden');
+
+    if (selectFPCourse[0].value === '') {   
+      hasUserDoneFP = false;
+    }else
+    {
+      hasUserDoneFP = true;
+    }
   }
 });
 
@@ -218,15 +243,14 @@ formUserCourseDetails.addEventListener('submit', (event) => {
   let isFormValid = validateForm1();
 
   if (isFormValid) {
-    alert("Formulario enviado");
     stripe(currentItemSelected, productsData);
   }
 });
 
 returnBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  formUserCourseDetails.style.display = 'none';
-  formUserDetails.style.display = 'block';
+  formUserCourseDetails.classList.add('is-hidden');
+  formUserDetails.classList.remove('is-hidden');
 });
 
 courseSelected.addEventListener('change', () => {
@@ -255,16 +279,16 @@ courseSelect.addEventListener('change', (event) => {
 });
 
 courseWeekdays.addEventListener('change', function () {
-  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData);
+  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
 courseHours.addEventListener('change', function () {
-  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData);
+  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
 coursePaymentType.addEventListener('change', function () {
-  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData);
+  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });

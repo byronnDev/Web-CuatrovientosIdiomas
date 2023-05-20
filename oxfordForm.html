@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" id="formscrollbar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=stylesheet href="./bulma/css/bulma.css">
+    <link rel="stylesheet" href="./bulma/css/style.css">
+    <link rel="stylesheet" href="./bulma/css/bulma-pricingtable.min.css">
+    <script src="https://js.stripe.com/v3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container mb-6">
+            <div class="has-text-centered">
+              <p class="has-text-weight-bold is-4">
+                <span class="separator"></span> READY TO ENROLL? <span class="separator"></span>
+              </p>
+              <h1 class="title is-3 mt-4">
+                Sign Up for Our Courses Now!
+              </h1>
+            </div>
+          </div>
+        <div class="container">
+            <form class="shadow-ontop-effect p-5" name="oxfordDetails">
+                <div class="columns">
+                    <div class="column">
+                        <div class="field mb-5">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input validation_basic" type="text" placeholder="Enter your name"
+                                    name="name">
+                            </div>
+                        </div>
+
+                        <div class="field mb-5">
+                            <label class="label">DNI</label>
+                            <div class="control">
+                                <input class="input" id="dni_validation" type="text" placeholder="Enter your DNI"
+                                    name="dni">
+                            </div>
+                        </div>
+
+                        <div class="field mb-5">
+                            <label class="label">Phone Number</label>
+                            <div class="control">
+                                <input class="input" id="phone_validation" type="text"
+                                    placeholder="Enter your phone number" name="phoneNumber">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="column">
+                        <div class="field mb-5">
+                            <label class="label">Surnames</label>
+                            <div class="control">
+                                <input class="input validation_basic" type="text"
+                                    placeholder="Enter your second surnames" name="surnames">
+                            </div>
+                        </div>
+
+
+                        <div class="field mb-5">
+                            <label class="label">Email Address</label>
+                            <div class="control">
+                                <input class="input" id="email_validation" type="email"
+                                    placeholder="Enter your email address" name="email">
+                            </div>
+                        </div>
+
+                        
+
+                        <div class="field mb-5">
+                            <label class="label">
+                                English Level
+                                <span class="icon is-clickable">
+                                    <!--onclick="showHelp()"-->
+                                    <i class="fas fa-question-circle"></i>
+                                </span>
+                            </label>
+
+                            <div class="select">
+                                <select id="courses" name="coursesFP">
+                                    <option value="">--Select a course--</option>
+                                    <option value="Not Enrolled">Not Enrolled</option>
+                                    <option value="FPB">FPB</option>
+                                    <option value="FPE">FPE</option>
+                                    <option value="GA 1º">GA 1º</option>
+                                    <option value="GA 2º">GA 2º</option>
+                                    <option value="AC 1º">AC 1º</option>
+                                    <option value="AC 2º">AC 2º</option>
+                                    <option value="SMR 1º">SMR 1º</option>
+                                    <option value="SMR 2º">SMR 2º</option>
+                                    <option value="AF 1º">AF 1º</option>
+                                    <option value="AF 2º">AF 2º</option>
+                                    <option value="CI 1º">CI 1º</option>
+                                    <option value="CI 2º">CI 2º</option>
+                                    <option value="TL 1º">TL 1º</option>
+                                    <option value="TL 2º">TL 2º</option>
+                                    <option value="TL ONLINE">TL ONLINE</option>
+                                    <option value="GVEC 1º">GVEC 1º</option>
+                                    <option value="GVEC 2º">GVEC 2º</option>
+                                    <option value="ASIR 1º">ASIR 1º</option>
+                                    <option value="ASIR 2º">ASIR 2º</option>
+                                    <option value="DAM 1º">DAM 1º</option>
+                                    <option value="DAM 2º">DAM 2º</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="field mb-5" data-radio-set="1">
+                            <label class="label">Are you underage?</label>
+                            <div class="field">
+                                <input type="radio" name="underage" class="radioUpgraded" id="radioCustom1" data-value="0">
+                                <label for="radioCustom1" class="button is-link is-light">Yes</label>
+
+                                <input type="radio" name="underage" class="radioUpgraded" id="radioCustom2" data-value="1">
+                                <label for="radioCustom2" class="button is-link is-light">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="pricing-table is-hidden">
+                    <div class="pricing-plan">
+                      <div class="plan-header">Starter</div>
+                      <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>46</span></div>
+                      <div class="plan-items">
+                        <div class="plan-item">
+                            <div class="select">
+                            <select>
+                              <option>Listening</option>
+                              <option>Writing</option>
+                              <option>Speaking</option>
+                              <option>Reading</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="plan-item">-</div>
+                        <div class="plan-item">-</div>
+                        <div class="plan-item">-</div>
+                      </div>
+                      <div class="plan-footer">
+                        <button class="button is-fullwidth has-paid">Choose</button>
+                      </div>
+                    </div>
+                  
+                    <div class="pricing-plan is-warning is-hidden" id="fpStudent">
+                      <div class="plan-header">Startups</div>
+                      <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>86</span></div>
+                      <div class="plan-items">
+
+                        <div class="plan-item">Writing</div>
+                        <div class="plan-item">Reading</div>
+                        <div class="plan-item">Speaking</div>
+                        <div class="plan-item">Listening</div>
+                      </div>
+                      <div class="plan-footer">
+                        <button class="button is-fullwidth has-paid">Choose</button>
+                      </div>
+                    </div>
+                  
+                    <div class="pricing-plan">
+                      <div class="plan-header">Growing Team</div>
+                      <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>96</span></div>
+                      <div class="plan-items">
+                        <div class="plan-item">Writing</div>
+                        <div class="plan-item">Reading</div>
+                        <div class="plan-item">Speaking</div>
+                        <div class="plan-item">Listening</div>
+                      </div>
+                      <div class="plan-footer">
+                        <button class="button is-fullwidth has-paid">Choose</button>
+                      </div>
+                    </div>
+                  
+                    <div class="pricing-plan is-danger">
+                      <div class="plan-header">Enterprise</div>
+                      <div class="plan-price"><span class="plan-price-amount"><span class="plan-price-currency">$</span>120</span></div>
+                      <div class="plan-items">
+                        <div class="plan-item">Writing</div>
+                        <div class="plan-item">Reading</div>
+                        <div class="plan-item">Speaking</div>
+                        <div class="plan-item">Listening</div>
+                      </div>
+                      <div class="plan-footer">
+                        <button class="button is-fullwidth has-paid">Choose</button>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+
+                  <div class="field is-grouped" id="are-buttons">
+                    <div class="control">
+                        <button class="button is-link">Continue</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link is-light">Reset</button>
+                    </div>
+
+                </div>
+
+
+            </form>
+        </div>
+    </section>
+
+    
+    <!--<button id="checkout"></button>-->
+
+    <script src="./oxfordForm.js" type="module"></script>
+    <script src="./helpers.js" type="module"></script>
+
+</body>
+
+</html>

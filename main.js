@@ -1,3 +1,21 @@
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    };
+
+    function checkAndHideElement() {
+        var element = document.querySelector('#\\:1\\.container');
+        if (element) {
+          element.style.visibility = 'hidden';
+        }
+  
+        var targetLanguageDiv = document.getElementById(':0.targetLanguage');
+        if (targetLanguageDiv) {
+          while (targetLanguageDiv.nextSibling) {
+            targetLanguageDiv.nextSibling.remove();
+          }
+        }
+      }
+      setInterval(checkAndHideElement, 10);
 
 // FAQ section
 var readMoreButton = document.getElementById('readMoreButton');
@@ -79,40 +97,6 @@ burger.addEventListener('click', function () {
     burger.classList.toggle('is-active'); // Add or remove the is-active class on the burger
     menu.classList.toggle('is-active'); // Add or remove the is-active class on the menu
 });
-
-// Translate API
-document.addEventListener('DOMContentLoaded', function () {
-    const selectElement = document.querySelector('#translator select');
-
-    selectElement.addEventListener('change', function (event) {
-        const selectedLanguage = event.target.value;
-        translatePage(selectedLanguage);
-    });
-});
-
-function translatePage(language) {
-    const textElements = document.querySelectorAll('[data-translate]');
-    const apiKey = 'TU_CLAVE_DE_API';
-
-    textElements.forEach(function (element) {
-        const originalText = element.dataset.translate;
-        translateText(originalText, language, apiKey)
-            .then(function (translatedText) {
-                element.textContent = translatedText;
-            })
-            .catch(function (error) {
-                console.error('Error de traducción:', error);
-            });
-    });
-}
-
-// Function to translate text
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-        { pageLanguage: 'en' },
-        'google_translate_element'
-    )
-};
 
 function checkAndHideElement() {
     var element = document.querySelector('#\\:1\\.container');

@@ -16,8 +16,17 @@
 
 <body>
     <section class="section">
+        <div class="container mb-6">
+            <div class="has-text-centered">
+              <p class="has-text-weight-bold is-4">
+                <span class="separator"></span> READY TO ENROLL? <span class="separator"></span>
+              </p>
+              <h1 class="title is-3 mt-4">
+                Sign Up for Our Courses Now!
+              </h1>
+            </div>
+          </div>
         <div class="container">
-            <h1 class="title">Inscription Form</h1>
             <form class="shadow-ontop-effect p-5" name="user_details">
                 <div class="columns">
                     <div class="column">
@@ -45,7 +54,7 @@
                             </div>
                         </div>
 
-                        <label class="label">Select FIle</label>
+                        <label class="label">DNI Picture</label>
                         <div id="file-js-example" class="file has-name mb-5">
                             <label class="file-label">
                                 <input class="file-input" type="file" name="resume">
@@ -89,26 +98,14 @@
                         </div>
 
                         <div class="field mb-5">
-                            <label class="label" id="name-label">
-                                Name
-                                <span class="icon is-clickable">
-                                    <!--onclick="showHelp()"-->
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                            </label>
+                            <label class="label" id="name-label">Enrollment Date</label>
                             <div class="control">
                                 <input class="input" id="enrollment_validation" type="date" name="startDate">
                             </div>
                         </div>
 
                         <div class="field mb-5">
-                            <label class="label">
-                                English Level
-                                <span class="icon is-clickable">
-                                    <!--onclick="showHelp()"-->
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
-                            </label>
+                            <label class="label">FP Course</label>
 
                             <div class="select">
                                 <select id="courses" name="coursesFP">
@@ -141,12 +138,12 @@
                         </div>
 
                         <div class="field mb-5" data-radio-set="2">
-                            <label class="label">Are you an old student?</label>
+                            <label class="label">Old student?</label>
                             <div class="field">
-                                <input type="radio" name="old_student" class="radioUpgraded" id="radioCustom3">
+                                <input type="radio" name="old_student" class="radioUpgraded" id="radioCustom3" data-value="0">
                                 <label for="radioCustom3" class="button is-link is-light">Yes</label>
 
-                                <input type="radio" name="old_student" class="radioUpgraded" id="radioCustom4">
+                                <input type="radio" name="old_student" class="radioUpgraded" id="radioCustom4" data-value="1">
                                 <label for="radioCustom4" class="button is-link is-light">No</label>
                             </div>
                         </div>
@@ -166,17 +163,17 @@
 
             </form>
 
-            <form class="shadow-ontop-effect p-5" name="user_course_details" style="display: none;">
+            <form class="shadow-ontop-effect p-5 is-hidden" name="user_course_details">
                 <div class="columns">
                     <div class="column">
 
                         <div class="field mb-5" data-radio-set="1">
-                            <label class="label">Course_weekdays</label>
+                            <label class="label">Course Schedule</label>
                             <div class="field">
-                                <input type="radio" name="course_weekdays" class="radioUpgraded" id="radioCustom1">
+                                <input type="radio" name="course_weekdays" class="radioUpgraded" id="radioCustom1" data-value="0">
                                 <label for="radioCustom1" class="button is-link is-light">Lunes y miércoles</label>
 
-                                <input type="radio" name="course_weekdays" class="radioUpgraded" id="radioCustom2">
+                                <input type="radio" name="course_weekdays" class="radioUpgraded" id="radioCustom2" data-value="1">
                                 <label for="radioCustom2" class="button is-link is-light">Martes y jueves</label>
                             </div>
                         </div>
@@ -186,11 +183,7 @@
 
                         <div class="field mb-5">
                             <label class="label">
-                                Name
-                                <span class="icon is-clickable">
-                                    <!--onclick="showHelp()"-->
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
+                                Course Level
                             </label>
                             <div class="select">
                                 <select name="courseHours">
@@ -212,21 +205,17 @@
                         <div class="field mb-5" data-radio-set="3">
                             <label class="label">Type of Payment</label>
                             <div class="field">
-                                <input type="radio" name="payment_type" class="radioUpgraded" id="radioCustom5">
+                                <input type="radio" name="payment_type" class="radioUpgraded" id="radioCustom5" data-value="0">
                                 <label for="radioCustom5" class="button is-link is-light">Monthly</label>
 
-                                <input type="radio" name="payment_type" class="radioUpgraded" id="radioCustom6">
+                                <input type="radio" name="payment_type" class="radioUpgraded" id="radioCustom6" data-value="1">
                                 <label for="radioCustom6" class="button is-link is-light">One Time Payment</label>
                             </div>
                         </div>
 
                         <div class="field mb-5">
                             <label class="label">
-                                Name
-                                <span class="icon is-clickable">
-                                    <!--onclick="showHelp()"-->
-                                    <i class="fas fa-question-circle"></i>
-                                </span>
+                                Select your Course
                             </label>
                             <div class="select">
                                 <select id="course" name="englishCourse" disabled>
@@ -257,7 +246,7 @@
                     <div class="control">
                         <label class="checkbox">
                             <input type="checkbox">
-                            I accept the payment policies
+                            I accept the privacy policies
                             <span class="icon is-clickable">
                                 <i class="fas fa-question-circle"></i>
                             </span>

@@ -4010,7 +4010,7 @@ fieldset[disabled] .radio,
 }
 
 .select:not(.is-multiple) {
-  height: 2.5em;
+  /*height: 2.5em;*/
 }
 
 .select:not(.is-multiple):not(.is-loading)::after {
@@ -13070,3 +13070,7 @@ print {
 }
 
 /*# sourceMappingURL=bulma.css.map */
+
+/*.select:not(.is-multiple) {
+    height: 2.5em;
+}*/

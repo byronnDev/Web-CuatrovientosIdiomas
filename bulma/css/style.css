@@ -1,4 +1,72 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat;:300,400,600,700,800|Source+Sans+Pro:300,400,600,700);
+/*NAVBAR STYLES*/
+.img-logo {
+  width: 100%;
+  height: auto;
+}
+
+
+/*IFRAME STYLES*/
+.iframe-form {
+  width: 100%;
+  height: 1350px;
+}
+
+
+/*Footer Syles*/
+.footer-logo {
+  width: 300px;
+}
+
+.footer-map {
+  width: 350px;
+  height: 150px;
+  border: 0;
+}
+
+.footer-list > li {
+  list-style: none;
+}
+
+.footer-company-logo {
+  width: 80px;
+  height: 80px;
+}
+
+.footer-company-logo-multiple {
+  width: 300px;
+  height: 80px;
+}
+
+/*Separator*/
+.separator {
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  background-color: #000;
+  margin: 4px 10px;
+}
+
+/*Translation*/
+#google_translate_element {position:relative;}
+
+#google_translate_element span {display: none!important; }
+
+#google_translate_element select {
+padding: 0px;
+text-align: center;
+width: 200px;
+
+}
+
+.goog-te-banner-frame.skiptranslate {display: none!important; visibility: hidden!important;}
+
+.goog-te-gadget{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+  white-space: nowrap;
+  font-size: 1rem !important;
+}
 
 /* Disable scrollbar for form.html */
 html#formscrollbar {

@@ -19,7 +19,7 @@ export function stripe(currentItemSelected, productsData) {
                 quantity: 1,
             },
         ],
-        mode: currentItemSelected > 100 ? "payment" : "subscription",
+        mode: getProductMode(productId),
         successUrl: "https://google.com",
         cancelUrl: "https://google.com",
     }).then(function (result) {
@@ -29,8 +29,40 @@ export function stripe(currentItemSelected, productsData) {
     })
 }
 
+function getProductMode(productId) {
+    switch (productId) {
+      case "price_1N2zMdASksDI5wteY4NTvonC":
+        return "subscription";
+      case "price_1N2zM3ASksDI5wtehOpnso4v":
+        return "subscription";
+      case "price_1N2zLEASksDI5wteR34yl20j":
+        return "payment";
+      case "price_1N2zMPASksDI5wteK8UZaOO4":
+        return "payment";
+      case "price_1N9sQiASksDI5wteP4k37jxM":
+        return "payment";
+      case "price_1N9sR3ASksDI5wtevrRHcwJ5":
+        return "payment";
+      case "price_1N9sRMASksDI5wteILtT3Zmm":
+        return "payment";
+      case "price_1N9sRlASksDI5wtex6xWU1zC":
+        return "payment";
+      default:
+        return "error";
+    }
+  }
+  
+
+
 export function dangerOnValidationAppender(text, appender, input) {
     input.classList.add('is-danger');
+  
+    const existingHelpText = appender.querySelector('.help.is-danger');
+    if (existingHelpText) {
+      existingHelpText.textContent = text;
+      return;
+    }
+  
     const helpText = document.createElement('p');
     helpText.classList.add('help', 'is-danger');
     helpText.textContent = text;
@@ -38,19 +70,27 @@ export function dangerOnValidationAppender(text, appender, input) {
     helpText.style.position = 'absolute';
     helpText.style.top = appender.offsetHeight + 'px';
     helpText.style.left = 0;
-}
+  }
+  
 
-export function dangerOnValidationAppenderRadio(text, appender, input1, input2) {
+  export function dangerOnValidationAppenderRadio(text, appender, input1, input2) {
     input1.classList.add('is-danger');
     input2.classList.add('is-danger');
-    const helpText = document.createElement('p');
-    helpText.classList.add('help', 'is-danger');
-    helpText.textContent = text;
-    appender.appendChild(helpText);
-    helpText.style.position = 'absolute';
-    helpText.style.top = appender.offsetHeight + 'px';
-    helpText.style.left = 0;
-}
+    
+    // Check if helpText element already exists
+    let helpText = appender.querySelector('.help');
+    
+    if (!helpText) {
+      helpText = document.createElement('p');
+      helpText.classList.add('help', 'is-danger');
+      helpText.textContent = text;
+      appender.appendChild(helpText);
+      helpText.style.position = 'absolute';
+      helpText.style.top = appender.offsetHeight + 'px';
+      helpText.style.left = 0;
+    }
+  }
+  
 
 export function dangerOnValidationRemover(input) {
     input.classList.remove('is-danger');
@@ -61,8 +101,7 @@ export function dangerOnValidationRemover(input) {
     }
 }
 
-//TODO: ir cambiado un var para lugo validar, si es falsa se retorna false y no se envia el formulario
-export function validateForm(totalFilesSelected, fileInput, dni) {
+export function validateForm(totalFilesSelected, fileInput, dni, email, phoneNumber, date1, date2) {
     const formInputs = document.forms["user_details"].elements;
     let radioCounter = 0;
     let radioCheckedCounter = 0;
@@ -93,7 +132,7 @@ export function validateForm(totalFilesSelected, fileInput, dni) {
             }
 
 
-        } else if (formInputs[i].tagName === "SELECT") {
+        } /* else if (formInputs[i].tagName === "SELECT") {
             if (formInputs[i].value === "") {
                 dangerOnValidationAppender(
                     "Please select a valid option",
@@ -102,23 +141,66 @@ export function validateForm(totalFilesSelected, fileInput, dni) {
                 );
                 canWeSendTheForm = false;
             }
-        } else if (formInputs[i].tagName === "INPUT") {
-            if (!formInputs[i].value.trim()) {
+        }  */
+        else if (formInputs[i].tagName === "INPUT") {
+            if (formInputs[i].classList.contains("validation_basic")) {
+                if (formInputs[i].value.trim() === "") {
+                    dangerOnValidationAppender('This field is required', formInputs[i].parentNode, formInputs[i]);
+                    canWeSendTheForm = false; 
+                }else{
+                    dangerOnValidationRemover(formInputs[i]);
+                }
 
-            }
+                
+              }
         }
     }
 
     if (totalFilesSelected === 0) {
-        dangerOnValidationAppender('Please upload a file', fileInput.parentNode.parentNode, fileInput.parentNode.parentNode)
+        dangerOnValidationAppender('Please upload a file of your DNI', fileInput.parentNode.parentNode, fileInput.parentNode.parentNode)
         canWeSendTheForm = false;
     }
 
     if (!DNIValidaion(dni.value)) {
-        dangerOnValidationAppender('Please enter a valid DNI', dni.parentNode, dni)
-        alert('Please enter a valid DNI')
+        dangerOnValidationAppender('Please enter a valid DNI Example: "08236554R"', dni.parentNode, dni)
         canWeSendTheForm = false;
+    }else
+    {
+        dangerOnValidationRemover(dni);
     }
+
+    if (!emailValidation(email.value)) {
+        dangerOnValidationAppender('Please enter a valid email Example: "example@gmail.com"', email.parentNode, email)
+        canWeSendTheForm = false;
+    }else
+    {
+        dangerOnValidationRemover(email);
+    }
+
+    if (!phoneValidation(phoneNumber.value)) {
+        dangerOnValidationAppender('Please enter a valid phone number Example: "671520833"', phoneNumber.parentNode, phoneNumber)
+        canWeSendTheForm = false;
+    }else
+    {
+        dangerOnValidationRemover(phoneNumber);
+    }
+
+    if (date1.value === "" || dateValidation(new Date(date1.value), false)) {
+        dangerOnValidationAppender('Please select a date before the current date', date1.parentNode, date1)
+        canWeSendTheForm = false;
+    }else
+    {
+        dangerOnValidationRemover(date1);
+    }
+
+    if (date2.value === "" || dateValidation(new Date(date2.value), true)) {
+        dangerOnValidationAppender('Please select a date after the current date', date2.parentNode, date2)
+        canWeSendTheForm = false;
+    }else
+    {
+        dangerOnValidationRemover(date2);
+    }
+
 
     if (radioCheckedCounter !== 1) {
         canWeSendTheForm = false;
@@ -145,7 +227,7 @@ export function DNIValidaion(dni) {
 }
 //VALIDACION INAZIO
 export function emailValidation(email) {
-    let regExp = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    let regExp = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
     //Si no funciona probar esta ^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$
     if (email.match(regExp)) {
         return true;
@@ -153,8 +235,23 @@ export function emailValidation(email) {
         return false;
     }
 }
-export function phoneValidation() { }
-export function dateValidation() { }
+export function phoneValidation(phoneNumber) {
+        const phoneNumberRegex = /^(6|7|9)\d{8}$/;
+        if (phoneNumber.match(phoneNumberRegex)) {
+            return true;
+        }
+        return false;
+}
+function dateValidation(date, isOlder) {
+  const today = new Date();
+
+  if (isOlder) {
+    return date < today;
+  } else {
+    return date > today;
+  }
+}
+
 
 export function validateForm1() {
     const formInputs = document.forms["user_course_details"].elements;
@@ -162,6 +259,7 @@ export function validateForm1() {
     let checkboxCheckedCounter = 0;
     let radioCheckedCounter = 0;
     let pastOneWasChecked = false;
+    let canWeSendTheForm = true;
 
     for (let i = 0; i < formInputs.length; i++) {
         const inputName = formInputs[i].name;
@@ -180,6 +278,7 @@ export function validateForm1() {
                     const nextElementSibling = formInputs[i].nextElementSibling;
                     if (previousElementSibling && nextElementSibling) {
                         dangerOnValidationAppenderRadio('Please select an option', previousElementSibling, nextElementSibling, previousElementSibling);
+                        canWeSendTheForm = false;
                     }
                 }
                 pastOneWasChecked = false;
@@ -189,15 +288,21 @@ export function validateForm1() {
                 checkboxCheckedCounter++;
             } else {
                 dangerOnValidationAppender('Please accept to continue', formInputs[i].parentElement, formInputs[i].parentNode)
+                canWeSendTheForm = false;
             }
         } else if (formInputs[i].tagName === "SELECT") {
             if (formInputs[i].value === "") {
                 dangerOnValidationAppender('Please select a valid option', formInputs[i].parentNode, formInputs[i].parentNode)
+                canWeSendTheForm = false;
             }
         }
     }
 
-    if (radioCheckedCounter === 2 && checkboxCheckedCounter === 2) {
+    if (radioCheckedCounter !== 2 && checkboxCheckedCounter !== 2) {
+        canWeSendTheForm = false;
+    }
+
+    if (canWeSendTheForm) {
         return true;
     } else {
         return false;
@@ -259,21 +364,26 @@ export function clearCheckboxOnChange(checkboxList) {
     }
 }
 
-export function clearRadiosOnChecked(stringOfRadioClicked, radioSet) {
+export function clearRadiosOnChecked(radioSet) {
     radioSet.forEach(radio => {
-        radio.addEventListener('change', (event) => {
-            if (event.target) {
-                if (event.target.nextElementSibling.innerHTML.includes(stringOfRadioClicked)) {
-                    dangerOnValidationRemover(radio.nextElementSibling);
-                    dangerOnValidationRemover(radio.nextElementSibling.nextElementSibling.nextElementSibling);
-                } else {
-                    dangerOnValidationRemover(radio.nextElementSibling);
-                    dangerOnValidationRemover(radio.previousElementSibling);
-                }
-            }
-        });
+      radio.addEventListener('change', (event) => {
+        if (event.target) {
+          const selectedValue = event.target.getAttribute('data-value');
+          // Use the selectedValue to determine which radio button was clicked
+          if (selectedValue === '0') {
+            // Handle logic for "Lunes y miércoles" selection
+            dangerOnValidationRemover(radio.nextElementSibling);
+            dangerOnValidationRemover(radio.nextElementSibling.nextElementSibling.nextElementSibling);
+          } else if (selectedValue === '1') {
+            // Handle logic for "Martes y jueves" selection
+            dangerOnValidationRemover(radio.nextElementSibling);
+            dangerOnValidationRemover(radio.previousElementSibling);
+          }
+        }
+      });
     });
-}
+  }
+  
 
 export function updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected) {
     if (!newElement) {
@@ -297,7 +407,7 @@ export function updatePriceText(newElement, courseSelect, courseHours, coursesDa
     }
 }
 
-export function handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData) {
+export function handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFp) {
     if ((courseWeekdays.checked || courseWeekdays.nextElementSibling.nextElementSibling.checked) && (coursePaymentType.checked || coursePaymentType.nextElementSibling.nextElementSibling.checked) && courseHours.value !== "") {
         //updatePriceText(newElement);
 
@@ -305,9 +415,14 @@ export function handleSelection(courseWeekdays, courseHours, coursePaymentType, 
         const days = courseWeekdays.nextElementSibling.innerHTML;
         const hours = courseHours.value;
 
-        const filteredCourses = Object.values(coursesData).filter(course => {
-            return course.days.includes(days) && course.course.includes(hours);
-        });
+        let filteredCourses = Object.values(coursesData).filter(course => {
+            if (course.course.includes("FP") && !hasUserDoneFp) {
+                return;
+            }else{
+                return course.days.includes(days) && course.course.includes(hours);
+            }
+            });
+        
 
 
 
@@ -334,4 +449,95 @@ export function handleSelection(courseWeekdays, courseHours, coursePaymentType, 
         //updatePriceText(newElement);
     }
 
+}
+
+export function validateFormOxford(dni, email, phone) {
+    const formInputs = document.forms["oxfordDetails"].elements;
+    let radioCounter = 0;
+    let radioCheckedCounter = 0;
+    let pastOneWasChecked = false;
+    let canWeSendTheForm = true;
+
+    for (let i = 0; i < formInputs.length; i++) {
+        const inputName = formInputs[i].name;
+
+        if (inputName === "underage") {
+            radioCounter++;
+
+            if (formInputs[i].checked) {
+                radioCheckedCounter++;
+                pastOneWasChecked = true;
+            }
+
+            if (radioCounter % 2 === 0) {
+                if (!pastOneWasChecked && formInputs[i] && formInputs[i].previousElementSibling && formInputs[i].nextElementSibling) {
+                    const previousElementSibling = formInputs[i].previousElementSibling;
+                    const nextElementSibling = formInputs[i].nextElementSibling;
+                    if (previousElementSibling && nextElementSibling) {
+                        dangerOnValidationAppenderRadio('Please select an option', previousElementSibling, nextElementSibling, previousElementSibling);
+                        canWeSendTheForm = false;
+                    }
+                }
+                pastOneWasChecked = false;
+            }
+        }else if (formInputs[i].tagName === "INPUT") {
+            if (formInputs[i].classList.contains("validation_basic")) {
+                if (formInputs[i].value.trim() === "") {
+                    dangerOnValidationAppender('This field is required', formInputs[i].parentNode, formInputs[i]);
+                    canWeSendTheForm = false; 
+                }else{
+                    dangerOnValidationRemover(formInputs[i]);
+                }
+
+                
+              }
+        }
+
+        // } else if (formInputs[i].tagName === "SELECT") {
+        //     if (formInputs[i].value === "") {
+        //         dangerOnValidationAppender(
+        //             "Please select a valid option",
+        //             formInputs[i].parentNode,
+        //             formInputs[i].parentNode
+        //         );
+        //         canWeSendTheForm = false;
+        //     }
+        // } 
+
+        
+    }
+
+    if (!DNIValidaion(dni.value)) {
+        dangerOnValidationAppender('Please enter a valid DNI Example: "08236554R"', dni.parentNode, dni)
+        canWeSendTheForm = false;
+    }else
+    {
+        dangerOnValidationRemover(dni);
+    }
+
+    if (!emailValidation(email.value)) {
+        dangerOnValidationAppender('Please enter a valid email Example: "example@gmail.com"', email.parentNode, email)
+        canWeSendTheForm = false;
+    }
+    else{
+        dangerOnValidationRemover(email);
+    }
+
+    if (!phoneValidation(phone.value)) {
+        dangerOnValidationAppender('Please enter a valid phone number Example: "671520833"', phone.parentNode, phone)
+        canWeSendTheForm = false;
+    }
+    else{
+        dangerOnValidationRemover(phone);
+    }
+
+    if (radioCheckedCounter !== 1) {
+        canWeSendTheForm = false;
+    }
+
+    if (canWeSendTheForm) {
+        return true;
+    } else {
+        return false;
+    }
 }

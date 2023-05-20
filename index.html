@@ -9,123 +9,97 @@
   <link rel="stylesheet" href="./bulma/css/style.css"> <!-- Our own CSS -->
   <script src="https://kit.fontawesome.com/81e1d956bc.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
 
+  <script src="https://uploads-ssl.webflow.com/5e6cdff43dea835e0d32f309/5e6ce61775d1ae4d0299ac82_translator.txt"></script>
+
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.7/index.global.min.js'></script>
-  <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        // Calendar options and settings
-        // You can customize various options such as events, header, views, etc.
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
-        initialView: 'dayGridMonth',
-        events: [
-          // Event data
-          // You can provide your own events data in the specified format
-          // Example:
-          {
-            title: 'Event 1',
-            start: '2023-05-20',
-            end: '2023-05-22',
-            display: 'background'
-          },
-          {
-            title: 'Event 2',
-            start: '2023-05-25',
-            end: '2023-05-27',
-            display: 'background',
-            backgroundColor: 'red'
-          }
-        ],
-
-      });
-
-      calendar.render();
-    });
-
-  </script>
 
   <title>Language School</title>
 </head>
+
 <body>
   <header>
     <nav class="navbar is-transparent is-fixed-top has-shadow">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="./index.html">
-            <img src="./images/logoidiomas.jpg" alt="Cuatrovientos Idiomas" style="width: 100%; height: auto;">
-            </a>
-            <div class="navbar-burger" data-target="navbarExampleTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-            </div>
+      <div class="navbar-brand">
+        <a class="navbar-item" href="./index.html">
+          <img src="./images/logoidiomas.jpg" alt="Cuatrovientos Idiomas" class="img-logo">
+        </a>
+        <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="./index.html#">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-home"></i>
+              </span>
+              <span>Home</span>
+            </span>
+          </a>
+          <a class="navbar-item" href="./index.html#course-categories">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-graduation-cap"></i>
+              </span>
+              <span>Courses</span>
+            </span>
+          </a>
+          <a class="navbar-item" href="./oxford.html">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </span>
+              <span>Oxford</span>
+            </span>
+          </a>
+          <a class="navbar-item" href="./index.html#FAQ">
+            <span class="icon-text">
+              <span class="icon">
+                <i class="fas fa-question-circle"></i>
+              </span>
+              <span>FAQ</span>
+            </span>
+          </a>
         </div>
 
-        <div id="navbarExampleTransparentExample" class="navbar-menu">
-            <div class="navbar-start">
-            <a class="navbar-item" href="./index.html#">
-                <span class="icon-text">
-                <span class="icon">
-                    <i class="fas fa-home"></i>
-                </span>
-                <span>Home</span>
-                </span>
-            </a>
-            <a class="navbar-item" href="./index.html#course-categories">
-                <span class="icon-text">
-                <span class="icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </span>
-                <span>Courses</span>
-                </span>
-            </a>
-            <a class="navbar-item" href="./oxford.html">
-                <span class="icon-text">
-                <span class="icon">
-                    <i class="fa-solid fa-chalkboard-user"></i>
-                </span>
-                <span>Oxford</span>
-                </span>
-            </a>
-            <a class="navbar-item" href="./index.html#FAQ">
-                <span class="icon-text">
-                <span class="icon">
-                    <i class="fas fa-question-circle"></i>
-                </span>
-                <span>FAQ</span>
-                </span>
-            </a>
-            </div>
+        <div class="navbar-end">
 
-            <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="field is-grouped">
-                <p class="control">
-                    <a class="button is-primary" href="#form">
-                    <span class="icon">
-                        <i class="fas fa-user"></i>
-                    </span>
-                    <span>Inscribe</span>
-                    </a>
-                </p>
-                </div>
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <p class="control">
+                <a class="button is-primary" href="#form">
+                  <span class="icon">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span>Inscribe</span>
+                </a>
+              </p>
             </div>
-            <div class="navbar-item">
-              <div id="google_translate_element" class="select is-primary"></div>
+          </div>
+
+          <div class="navbar-item">
+            <div class="select is-link">
+              <div id="google_translate_element">
+
+              </div>
+
             </div>
-            </div>
+          </div>
         </div>
+      </div>
     </nav>
-</header>
+  </header>
+
+  <!--No sirve creo (?)
   <div id="miElemento" class="oculto">
     <a class="irArriba" href="#arriba"><img class="flecha" src="./IMAGENES2/flechArriba.png" alt="flecha"></a>
   </div>
-  
+  -->
   <!--Start of section "Landing"-->
   <div class="hero is-big custom-bg is-link">
     <div class="hero-body is-z-preference has-text-centered">
@@ -134,28 +108,39 @@ document.addEventListener('DOMContentLoaded', function() {
       </p>
       <p class="subtitle is-4">
         Welcome to <span class="is-italic">Cuatrovientos Idiomas</span>!<br>
-        Language center since 2008 with a primary goal: to help students effectively learn<br> to communicate in English or French.
+        Language center since 2008 with a primary goal: to help students effectively learn<br> to communicate in English
+        or French.
       </p>
     </div>
   </div>
-
   <!--End of section "Landing"-->
 
   <!--Start of section "Our Services"-->
-  <section class="section mt-6">
+  <section class="section">
+
+    <div class="container mb-6">
+      <div class="has-text-centered">
+        <p class="has-text-weight-bold is-5"> <!-- Updated size to is-size-4 -->
+          <span class="separator"></span> AFFORDABLE AND UNBEATABLE PRICES <span class="separator"></span>
+        </p>
+        <h1 class="title is-2 mt-4"> <!-- Updated size to is-2 -->
+          What Do We Offer
+        </h1>
+      </div>
+    </div>
+
     <div class="columns">
       <div class="column">
         <div class="card servicios scale">
           <div class="card-content">
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
-              <i class="fas fa-chalkboard-teacher fa-3x"></i>
+              <i class="fas fa-language fa-3x"></i>
             </div>
-            <h2 class="title is-5 has-text-centered">In-person classes</h2>
-            <div class="content pl-6 pr-6 pb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-              <a href="#">#css</a> <a href="#">#responsive</a>
-              <br>
+            <h2 class="title is-3 has-text-centered"> <!-- Updated size to is-4 -->
+              English Courses
+            </h2>
+            <div class="content pl-6 pr-6 pb-4 has-text-centered">
+              All-level English courses tailored to your needs. Experience our teaching approach with a free trial class.
             </div>
           </div>
         </div>
@@ -164,14 +149,13 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="card servicios scale">
           <div class="card-content">
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
-              <i class="fas fa-laptop fa-3x"></i>
+              <i class="fas fa-graduation-cap fa-3x"></i>
             </div>
-            <h2 class="title is-5 has-text-centered">Online Classes</h2>
-            <div class="content pl-6 pr-6 pb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-              <a href="#">#css</a> <a href="#">#responsive</a>
-              <br>
+            <h2 class="title is-3 has-text-centered"> <!-- Updated size to is-4 -->
+              Oxford Exams
+            </h2>
+            <div class="content pl-6 pr-6 pb-4 has-text-centered">
+              Official Oxford college offering exam preparation courses. Expert instructors to guide you towards success.
             </div>
           </div>
         </div>
@@ -180,28 +164,39 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="card servicios scale">
           <div class="card-content">
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
-              <!-- dollar-->
-              <i class="fa-solid fa-piggy-bank fa-3x"></i>
+              <i class="fas fa-language fa-3x"></i>
             </div>
-            <h2 class="title is-5 has-text-centered">Free Trial</h2>
-            <div class="content pl-6 pr-6 pb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-              <a href="#">#css</a> <a href="#">#responsive</a>
-              <br>
+            <h2 class="title is-3 has-text-centered"> <!-- Updated size to is-4 -->
+              French Courses
+            </h2>
+            <div class="content pl-6 pr-6 pb-4 has-text-centered">
+              Comprehensive French courses for all levels. Start your learning journey with a free trial class.
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+  
+  
+  
   <!--End of section "Our Services"-->
-
 
   <!--Start of section "Why Enroll in Our English Academy"-->
   <section class="section">
+    <div class="container mb-6">
+      <div class="has-text-centered">
+        <p class="has-text-weight-bold is-5"> <!-- Updated size to is-size-4 -->
+          <span class="separator"></span> EXCEPTIONAL QUALITY AND VALUE <span class="separator"></span>
+        </p>
+        <h1 class="title is-2 mt-4"> <!-- Updated size to is-2 -->
+          What Sets Us Apart
+        </h1>
+      </div>
+    </div>
+
     <div class="container">
-      <h2 class="title has-text-centered pb-6">Why Enroll in Our Academy?</h2>
       <div class="columns is-centered">
         <div class="column is-one-third">
           <div class="box has-text-centered scale">
@@ -250,14 +245,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
-  </section>
-  <!--End of section "Why Enroll in Our English Academy"-->
 
-  <!--Start of section "College Data"-->
-  <!--Source Data Display: https://demo.themefisher.com/enov-bulma/-->
-  <section class="section">
     <div class="container">
-      <h1 class="title has-text-centered pb-2">College Data</h1>
       <div class="columns is-multiline">
         <div class="column is-4-desktop is-6-tablet">
           <div class="counter-item has-text-centered mt-5 scale">
@@ -280,34 +269,39 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </section>
-  <!--End of section "College Data"-->
-
-
-
-
+  <!--End of section "Why Enroll in Our English Academy"-->
+  <!--Source Data Display: https://demo.themefisher.com/enov-bulma/-->
 
   <!--Start of section "Our Courses"-->
   <section class="section" id="course-categories">
+    <div class="container mb-6">
+      <div class="has-text-centered">
+        <p class="has-text-weight-bold is-4">
+          <span class="separator"></span> ACADEMY INFORMATION AND COURSE SCHEDULES <span class="separator"></span>
+        </p>
+        <h1 class="title is-3 mt-4">
+          Explore Our Programs and Class Schedules
+        </h1>
+      </div>
+    </div>
     <div class="columns">
       <div class="column">
-        <h2 class="title has-text-centered pb-6">Available Courses</h2>
-      
-    <!--C1, C2, B1, B2 menu-->
-    <aside class="menu">
-      <ul class="menu-list">
-        <li>
-          <a class="subtitle is-active">English <i class="fas fa-angle-down"></i></a>
-          <ul>
-            <li>A1
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+        <!--C1, C2, B1, B2 menu-->
+        <aside class="menu">
+          <ul class="menu-list">
+            <li>
+              <a class="subtitle is-active">English <i class="fas fa-angle-down"></i></a>
+              <ul>
+                <li>A1
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand and use familiar everyday expressions and very basic phrases aimed at the
@@ -317,17 +311,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </article>
               -->
-            </li>
-            <li>A2
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+                </li>
+                <li>A2
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand sentences and frequently used expressions related to areas of most immediate
@@ -338,68 +332,68 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </article>
               -->
+                </li>
+
+                <li>B1
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
+
+                <li>B2
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
+
+                <li>C1
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
+
+                <li>C2
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </li>
 
-            <li>B1
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
-
-            <li>B2
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
-
-            <li>C1
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
-
-            <li>C2
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-
-        <!--TODO FRENCH-->
-        <li>
-          <a class="subtitle is-active">French <i class="fas fa-angle-down"></i></a>
-          <ul>
-            <li>A1
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+            <!--TODO FRENCH-->
+            <li>
+              <a class="subtitle is-active">French <i class="fas fa-angle-down"></i></a>
+              <ul>
+                <li>A1
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand and use familiar everyday expressions and very basic phrases aimed at the
@@ -409,17 +403,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </article>
               -->
-            </li>
-            <li>A2
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-              <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
+                </li>
+                <li>A2
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
               <article class="message is-info">
                 <div class="message-body is-hidden">
                   You can understand sentences and frequently used expressions related to areas of most immediate
@@ -430,74 +424,78 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </article>
               -->
-            </li>
+                </li>
 
-            <li>B1
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
+                <li>B1
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
 
-            <li>B2
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
+                <li>B2
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
 
-            <li>C1
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
-            </li>
+                <li>C1
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
 
-            <li>C2
-              <span class="icon">
-                <i class="fa-regular fa-calendar-days"></i>
-              </span>
-              <div class="message is-success">
-                <div class="message-body is-hidden">
-                  Monday and Wednesday from 9:00 to 10:30
-                </div>
-              </div>
+                <li>C2
+                  <span class="icon">
+                    <i class="fa-regular fa-calendar-days"></i>
+                  </span>
+                  <div class="message is-success">
+                    <div class="message-body is-hidden">
+                      Monday and Wednesday from 9:00 to 10:30
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </li>
           </ul>
-        </li>
-      </ul>
-    </aside>
+        </aside>
       </div>
       <div class="column">
         <!--Implement a calendar-->
         <div id="calendar"></div>
-        
+
+      </div>
     </div>
-    
   </section>
   <!--End of section "Our Courses"-->
 
-  <!--Prices-->
-
-
-
-
   <!--Start of section "Students Reviews"-->
   <section class="section">
+    <div class="container mb-6">
+      <div class="has-text-centered">
+        <p class="has-text-weight-bold is-4">
+          <span class="separator"></span> STUDENT REVIEWS AND TESTIMONIALS <span class="separator"></span>
+        </p>
+        <h1 class="title is-3 mt-4">
+          Discover What Our Students Have to Say
+        </h1>
+      </div>
+    </div>
     <div class="container">
-      <h1 class="title pb-6">User Reviews</h1>
       <div class="card-carousel">
         <div class="card" id="1">
           <div class="image-container"></div>
@@ -528,10 +526,19 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
   <!--End of section "Students Reviews"-->
 
-
+  <!--Start of section "FAQ"-->
   <section class="section" id="FAQ">
-    <h1 class="title has-text-centered">FAQs</h1>
-  
+    <div class="container mb-6">
+      <div class="has-text-centered">
+        <p class="has-text-weight-bold is-4">
+          <span class="separator"></span> COMMONLY ASKED QUESTIONS <span class="separator"></span>
+        </p>
+        <h1 class="title is-3 mt-4">
+          Find Answers to Your Queries
+        </h1>
+      </div>
+    </div>
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
@@ -546,12 +553,14 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="content">
             First of all, it is recommended that you take the online level test that is available on our website.<br>
             It is free and does not commit you to anything.<br>
-            Registration is done online from our website by accessing the form through REGISTRATION and filling in the fields with your information. However, you can also access it by clicking <a href="#">HERE</a>. Once you submit it, you will receive a copy by email, and your spot will be confirmed through email.
+            Registration is done online from our website by accessing the form through REGISTRATION and filling in the
+            fields with your information. However, you can also access it by clicking <a href="#">HERE</a>. Once you
+            submit it, you will receive a copy by email, and your spot will be confirmed through email.
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
@@ -564,7 +573,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Our courses are adapted to the Common European Framework of Reference for Languages, and therefore the levels are:
+            Our courses are adapted to the Common European Framework of Reference for Languages, and therefore the
+            levels are:
             <ul>
               <li>A1, A2: Basic or Elementary level.</li>
               <li>B1, B2: Intermediate level.</li>
@@ -574,7 +584,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
@@ -587,12 +597,13 @@ document.addEventListener('DOMContentLoaded', function() {
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Without any commitment, you can come and try a first class completely FREE. Request it by clicking <a href="#">HERE</a>.
+            Without any commitment, you can come and try a first class completely FREE. Request it by clicking <a
+              href="#">HERE</a>.
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
@@ -605,12 +616,14 @@ document.addEventListener('DOMContentLoaded', function() {
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Although it is highly recommended to enroll to start the course in October, you can enroll at any time of the year. If you wish to enroll after the course has started, it is advisable to take the level test beforehand, as mentioned before, to assign you to an appropriate group.
+            Although it is highly recommended to enroll to start the course in October, you can enroll at any time of
+            the year. If you wish to enroll after the course has started, it is advisable to take the level test
+            beforehand, as mentioned before, to assign you to an appropriate group.
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border">
       <div class="card">
         <header class="card-header-no-border">
@@ -628,7 +641,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
@@ -641,16 +654,20 @@ document.addEventListener('DOMContentLoaded', function() {
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            The payment will be made through DIRECT DEBIT from a bank account once the classes have started, taking into account that the amount varies depending on the specific course you enroll in and the chosen payment method from the following:
+            The payment will be made through DIRECT DEBIT from a bank account once the classes have started, taking into
+            account that the amount varies depending on the specific course you enroll in and the chosen payment method
+            from the following:
             <ul>
-              <li>Monthly direct debit that will be charged at the beginning of each month (from October to May). It will be €75 or €50, depending on the chosen course.</li>
-              <li>Full course direct debit that will be charged at the beginning of October (with the discount already included). It will be €550 or €380, depending on the chosen course.</li>
+              <li>Monthly direct debit that will be charged at the beginning of each month (from October to May). It
+                will be €75 or €50, depending on the chosen course.</li>
+              <li>Full course direct debit that will be charged at the beginning of October (with the discount already
+                included). It will be €550 or €380, depending on the chosen course.</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
@@ -668,7 +685,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
     </div>
-  
+
     <div class="container is-max-desktop is-faq p-0 my-0 bottom-border is-hidden">
       <div class="card">
         <header class="card-header-no-border">
@@ -681,7 +698,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            There is no registration fee. As for textbooks, the teacher will indicate the materials to be used at the beginning of the course, and you will need to purchase them on your own.
+            There is no registration fee. As for textbooks, the teacher will indicate the materials to be used at the
+            beginning of the course, and you will need to purchase them on your own.
           </div>
         </div>
       </div>
@@ -699,10 +717,17 @@ document.addEventListener('DOMContentLoaded', function() {
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            There is no commitment or penalty; you can cancel your enrollment at any time, but please note that no refunds will be issued for any amount already paid.
-To request cancellation, you must NOTIFY us by sending an email to idiomas@cuatrovientos.org. The cancellation will be valid to avoid charging the direct debit ONLY if it is communicated BEFORE THE 25TH DAY OF THE PREVIOUS MONTH. Students who stop attending classes without notifying the cancellation as indicated will be responsible for the direct debit. If the direct debit is returned, it will remain pending for payment with any associated return fees.
-(Example: if I do not intend to attend classes in March, I must notify it to idiomas@cuatrovientos.org before February 25th)
-In the case of choosing the full course direct debit, if the student cancels the enrollment, there will be NO refund (UNLESS DULY JUSTIFIED FORCE MAJEURE REASONS).
+            There is no commitment or penalty; you can cancel your enrollment at any time, but please note that no
+            refunds will be issued for any amount already paid.
+            To request cancellation, you must NOTIFY us by sending an email to idiomas@cuatrovientos.org. The
+            cancellation will be valid to avoid charging the direct debit ONLY if it is communicated BEFORE THE 25TH DAY
+            OF THE PREVIOUS MONTH. Students who stop attending classes without notifying the cancellation as indicated
+            will be responsible for the direct debit. If the direct debit is returned, it will remain pending for
+            payment with any associated return fees.
+            (Example: if I do not intend to attend classes in March, I must notify it to idiomas@cuatrovientos.org
+            before February 25th)
+            In the case of choosing the full course direct debit, if the student cancels the enrollment, there will be
+            NO refund (UNLESS DULY JUSTIFIED FORCE MAJEURE REASONS).
 
           </div>
         </div>
@@ -722,7 +747,9 @@ In the case of choosing the full course direct debit, if the student cancels the
         <div class="card-content pt-0 is-hidden">
           <div class="content">
             The number of students per class is between 8 and 14 students.
-The center reserves the right to cancel a started or unstarted course if it does not reach the minimum number of students. However, students will always be offered the opportunity to join another face-to-face or online group.
+            The center reserves the right to cancel a started or unstarted course if it does not reach the minimum
+            number of students. However, students will always be offered the opportunity to join another face-to-face or
+            online group.
 
           </div>
         </div>
@@ -741,7 +768,10 @@ The center reserves the right to cancel a started or unstarted course if it does
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            Throughout the course, the teacher proposes different activities, tasks, and tests to monitor the teaching-learning process. The materials used in these courses also provide tools for self-evaluation of progress. At the end of the course, the teachers prepare a personalized report for each student, briefly discussing their achievements, areas for improvement, and the level attained.
+            Throughout the course, the teacher proposes different activities, tasks, and tests to monitor the
+            teaching-learning process. The materials used in these courses also provide tools for self-evaluation of
+            progress. At the end of the course, the teachers prepare a personalized report for each student, briefly
+            discussing their achievements, areas for improvement, and the level attained.
           </div>
         </div>
       </div>
@@ -759,8 +789,10 @@ The center reserves the right to cancel a started or unstarted course if it does
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            We offer general English and French courses, as well as courses for official exam preparation. We also offer English and French reinforcement courses specifically for students in vocational training programs.
-Most of our language courses are conducted in-person, but we also offer online training. If you are interested in online courses, we will provide you with more information.
+            We offer general English and French courses, as well as courses for official exam preparation. We also offer
+            English and French reinforcement courses specifically for students in vocational training programs.
+            Most of our language courses are conducted in-person, but we also offer online training. If you are
+            interested in online courses, we will provide you with more information.
 
           </div>
         </div>
@@ -797,7 +829,9 @@ Most of our language courses are conducted in-person, but we also offer online t
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            The objective of our courses is to provide enjoyable and effective language training to our students so that they can achieve their personal goals by the end of the course, whether it is to improve their overall language skills or to obtain certification through an official exam.
+            The objective of our courses is to provide enjoyable and effective language training to our students so that
+            they can achieve their personal goals by the end of the course, whether it is to improve their overall
+            language skills or to obtain certification through an official exam.
           </div>
         </div>
       </div>
@@ -815,8 +849,12 @@ Most of our language courses are conducted in-person, but we also offer online t
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            At the end of the course, the teachers prepare a personalized report indicating the achievements, areas for improvement, and the level attained. Any student can also request a certificate of achievement, which includes the number of hours invested during the course. However, please note that this certificate is not an official certification.
-All Cuatrovientos Idiomas (English) students have the opportunity to take an official exam at our center, as we are accredited as an Official OXFORD TEST OF ENGLISH Exam Center.
+            At the end of the course, the teachers prepare a personalized report indicating the achievements, areas for
+            improvement, and the level attained. Any student can also request a certificate of achievement, which
+            includes the number of hours invested during the course. However, please note that this certificate is not
+            an official certification.
+            All Cuatrovientos Idiomas (English) students have the opportunity to take an official exam at our center, as
+            we are accredited as an Official OXFORD TEST OF ENGLISH Exam Center.
 
           </div>
         </div>
@@ -835,8 +873,12 @@ All Cuatrovientos Idiomas (English) students have the opportunity to take an off
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-            The level test is very important to determine if you are ready to start a course for the specific exam you need. Our language teachers have extensive experience in preparing students for official exams, and they will help you decide if you are prepared for it.
-Cuatrovientos Idiomas is an official OXFORD exam center, and throughout the course, we organize different exam sessions open to the public. We also offer intensive preparatory courses so that candidates can become familiar with the exam format and how to approach it with the utmost confidence.
+            The level test is very important to determine if you are ready to start a course for the specific exam you
+            need. Our language teachers have extensive experience in preparing students for official exams, and they
+            will help you decide if you are prepared for it.
+            Cuatrovientos Idiomas is an official OXFORD exam center, and throughout the course, we organize different
+            exam sessions open to the public. We also offer intensive preparatory courses so that candidates can become
+            familiar with the exam format and how to approach it with the utmost confidence.
           </div>
         </div>
       </div>
@@ -854,62 +896,77 @@ Cuatrovientos Idiomas is an official OXFORD exam center, and throughout the cour
         </header>
         <div class="card-content pt-0 is-hidden">
           <div class="content">
-Cuatrovientos Idiomas courses are designed for young people and adults who want to start or continue their learning of English or French. We also offer courses for those interested in preparing for an official language certification exam, as well as for students in vocational training programs, high school, or university who need to catch up in order to pass a subject or module at the end of the course.
-At Cuatrovientos Idiomas, we also offer customized courses for companies and professionals who need to improve their language skills in a workplace environment.
+            Cuatrovientos Idiomas courses are designed for young people and adults who want to start or continue their
+            learning of English or French. We also offer courses for those interested in preparing for an official
+            language certification exam, as well as for students in vocational training programs, high school, or
+            university who need to catch up in order to pass a subject or module at the end of the course.
+            At Cuatrovientos Idiomas, we also offer customized courses for companies and professionals who need to
+            improve their language skills in a workplace environment.
+          </div>
         </div>
       </div>
     </div>
-    </div>
-  
+
     <div class="has-text-centered mt-6">
-    <button class="button is-primary" id="readMoreButton">Read More...</button>
+      <button class="button is-primary" id="readMoreButton">Read More...</button>
+    </div>
+  </section>
+  <!--End of section "FAQ"-->
+
+  <!-- Inscription form as subform -->
+  <iframe src="./form.html" title="Formulario de inscripción" id="form" class="iframe-form"></iframe>
+
+  <!-- Footer 
+  <iframe src="./footer.html" title="Footer" id="footer"></iframe>
+-->
+
+<footer>
+  <div class="content">
+    <div class="columns">
+      <div class="column has-text-centered ml-5">
+        <img src="./images/logoidiomas.jpg" alt="Logo" class="footer-logo">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11705.198743866435!2d-1.659854!3d42.824283!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5092855cefdac7%3A0xab7c62765f5209e2!2sCuatrovientos%20Centro%20Integrado!5e0!3m2!1ses!2ses!4v1684603384096!5m2!1ses!2ses" width="350" height="150" class="footer-map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="has-text-white">Schedules</h4>
+        <ul class="footer-list">
+          <li>Monday: 9am-2pm</li>
+          <li>Tuesday: 4:30pm-6:30pm</li>
+          <li>Wednesday: 9am-2pm</li>
+          <li>Thursday: 9am-2pm</li>
+          <li>Friday: 9am-2pm</li>
+        </ul>
+      </div>
+      <div class="column has-text-centered">
+        <h4 class="has-text-white">Departments</h4>
+        <ul class="footer-list">
+          <li>CENTRO INTEGRADO CUATROVIENTOS<br>Phone: (34) 948 12 41 29<br>Email: info@cuatrovientos.org</li>
+          <li>CUATROVIENTOS IDIOMAS<br>Phone: (34) 948 31 55 58<br>Email: idiomas@cuatrovientos.org</li>
+          <li>CUATROVIENTOS TECNOLÓGICO Y VUE<br>Phone: (34) 848 46 03 33<br>Email: certificaciones@cuatrovientos.org</li>
+        </ul>
+      </div>
+      <div class="column has-text-centered">
+        <img src="./images/SELLO-PA-INNOVARSE-2021-80x80.jpg" alt="Company 1" class="footer-company-logo">
+        <img src="./images/logos-colabora-2-300x265.png" alt="Company 2" class="footer-company-logo">
+        <img src="./images/logos-colabora-271x300.png" alt="Company 3" class="footer-company-logo">
+        <img src="./images/logos-colabora-1.png" alt="Company 4" class="footer-company-logo-multiple">
+        <img src="./images/Logo_KIMUA-1-80x80.png" alt="Company 5" class="footer-company-logo">
+      </div>
+    </div>
+    <hr>
+    <div class="has-text-centered">
+      <p>
+        <span>Cuatrovientos Idiomas</span> by <a href="https://www.cuatrovientos.org" target="_blank">Cuatrovientos</a>. &#9400; Copyright 2023.
+        All rights reserved.
+      </p>
+    </div>
   </div>
+</footer>
 
-  <style>
-      [id="\\:1.container"] {
-  visibility: hidden;
-}
-  </style>
-  
-  <script type="text/javascript">
-      function googleTranslateElementInit() {
-          new google.translate.TranslateElement(
-              { pageLanguage: 'en' },
-              'google_translate_element'
-          )};
-  </script>
-  
-  <script type="text/javascript"
-          src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
-
-  <script>
-    function checkAndHideElement() {
-      var element = document.querySelector('#\\:1\\.container');
-      if (element) {
-        element.style.visibility = 'hidden';
-      }
-
-      var targetLanguageDiv = document.getElementById(':0.targetLanguage');
-      if (targetLanguageDiv) {
-        while (targetLanguageDiv.nextSibling) {
-          targetLanguageDiv.nextSibling.remove();
-        }
-      }
-    }
-    setInterval(checkAndHideElement, 1000);
-  </script>
-      <!--End of section "FAQ"-->
-
-      <!-- Inscription form as subform -->
-      <iframe src="./form.html" title="Formulario de inscripción" id="form" style="width:100%; height:1350px;"></iframe>
-      
-      <!-- Footer -->
-      <iframe src="./footer.html" title="Footer" id="footer"></iframe>
-      <!-- Scripts -->
-
-      <script src="./carousel.js"></script>
-      <script src="./main.js"></script>
+  <!-- Scripts -->
+  <script src="./carousel.js"></script>
+  <script src="./main.js"></script>
+  <script src="./calendar.js"></script>
 </body>
 
 </html>
