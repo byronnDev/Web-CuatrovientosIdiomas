@@ -1,3 +1,4 @@
+//Handle stripe payment
 export function stripe(currentItemSelected, productsData) {
     var stripe = Stripe(
         "pk_test_Kk44etb9arfGs64zFUGivUPZ"
@@ -28,7 +29,7 @@ export function stripe(currentItemSelected, productsData) {
         }
     })
 }
-
+//Through a product id, we can know if it is a subscription or a payment
 function getProductMode(productId) {
     switch (productId) {
       case "price_1N2zMdASksDI5wteY4NTvonC":
@@ -50,10 +51,8 @@ function getProductMode(productId) {
       default:
         return "error";
     }
-  }
-  
-
-
+}
+//This appends a text to an APPENDER and adds a class to the INPUT to make it red 
 export function dangerOnValidationAppender(text, appender, input) {
     input.classList.add('is-danger');
   
@@ -70,8 +69,9 @@ export function dangerOnValidationAppender(text, appender, input) {
     helpText.style.position = 'absolute';
     helpText.style.top = appender.offsetHeight + 'px';
     helpText.style.left = 0;
-  }
+}
 
+//This appends a text to an APPENDER and adds a class to the INPUT1 INPUT2 to make it red
 export function dangerOnValidationAppenderRadio(text, appender, input1, input2) {
 input1.classList.add('is-danger');
 input2.classList.add('is-danger');
@@ -88,7 +88,8 @@ if (!helpText) {
     helpText.style.left = 0;
 }
 }
-  
+
+//This removes the red class from the INPUT and removes the text from the APPENDER
 export function dangerOnValidationRemover(input) {
     input.classList.remove('is-danger');
     const inputWrapper = input.parentNode;
@@ -97,6 +98,8 @@ export function dangerOnValidationRemover(input) {
         helpText.parentNode.removeChild(helpText);
     }
 }
+
+//Checks if the MAIN FORM of getting into a COURSE is valid
 export function validateForm(totalFilesSelected, fileInput, dni, email, phoneNumber, date1, date2) {
     const formInputs = document.forms["user_details"].elements;
     let radioCounter = 0;
@@ -245,8 +248,7 @@ function dateValidation(date, isOlder) {
     return date > today;
   }
 }
-
-
+//Checks if the SECOND FORM of getting into a COURSE is valid
 export function validateForm1() {
     const formInputs = document.forms["user_course_details"].elements;
     let radioCounter = 0;
@@ -302,42 +304,7 @@ export function validateForm1() {
         return false;
     }
 }
-
-export function inputChecker(requiredInputs, checkerOrSubimit) {
-    let isInputedDataValid = true;
-    requiredInputs.forEach(input => {
-
-        if (checkerOrSubimit) {
-            const inputWrapper = input.parentNode;
-
-            input.addEventListener('input', (event) => {
-                const inputValue = event.target.value.trim();
-
-                if (inputValue.length === 0) {
-                    console.log('Input is empty!');
-                    dangerOnValidationAppender('This field is required', inputWrapper, input);
-                    isInputedDataValid = false;
-                } else {
-                    console.log('Input value: ' + inputValue);
-                    dangerOnValidationRemover(input);
-                }
-            });
-
-        } else {
-            const inputValue = input.value.trim();
-
-            if (inputValue.length === 0) {
-                dangerOnValidationAppender('This field is required', input.parentNode, input);
-                isInputedDataValid = false;
-            } else {
-                dangerOnValidationRemover(input);
-            }
-        }
-
-    });
-    return isInputedDataValid;
-}
-
+//Checks if the passed SELECTBOX changed its state to clear errors alerts
 export function clearSelectBoxOnChange(selectBox) {
     selectBox.forEach(option => {
         option.addEventListener('change', (event) => {
@@ -348,6 +315,7 @@ export function clearSelectBoxOnChange(selectBox) {
     });
 }
 
+//Checks if the passed CHECKBOX changed its state to clear errors alerts
 export function clearCheckboxOnChange(checkboxList) {
     for (let i = 0; i < checkboxList.length; i++) {
         checkboxList[i].addEventListener('change', (event) => {
@@ -358,6 +326,7 @@ export function clearCheckboxOnChange(checkboxList) {
     }
 }
 
+//Checks if the passed RADIO changed its state to clear errors alerts
 export function clearRadiosOnChecked(radioSet) {
     radioSet.forEach(radio => {
       radio.addEventListener('change', (event) => {
@@ -373,9 +342,9 @@ export function clearRadiosOnChecked(radioSet) {
         }
       });
     });
-  }
-  
+}
 
+//Updates the price text of the course
 export function updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal) {
     if (!newElement) {
         return;
@@ -397,7 +366,7 @@ export function updatePriceText(newElement, courseSelect, courseHours, coursesDa
         newElement = null;
     }
 }
-
+//Updates the selectbox of available courses
 export function handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFp, courseWeekdaysRadio) {
     if ((courseWeekdays.checked || courseWeekdays.nextElementSibling.nextElementSibling.checked) && (coursePaymentType.checked || coursePaymentType.nextElementSibling.nextElementSibling.checked) && courseHours.value !== "") {
 
@@ -450,7 +419,7 @@ export function handleSelection(courseWeekdays, courseHours, coursePaymentType, 
     }
 
 }
-
+//Checks if OXFORD FORM is valid
 export function validateFormOxford(dni, email, phone) {
     const formInputs = document.forms["oxfordDetails"].elements;
     let radioCounter = 0;

@@ -1,18 +1,14 @@
 import {
   stripe,
-  dangerOnValidationAppender,
-  dangerOnValidationAppenderRadio,
   dangerOnValidationRemover,
   validateForm,
   validateForm1,
-  inputChecker,
   clearSelectBoxOnChange,
   clearCheckboxOnChange,
   clearRadiosOnChecked,
   updatePriceText,
   handleSelection
 } from "./helpers.js";
-
 
 const productsData = {
   "01": {
@@ -49,7 +45,6 @@ const productsData = {
   },
 
 };
-
 
 const coursesData = {
   "04": {
@@ -126,8 +121,8 @@ const coursesData = {
   }
 };
 
+//Acccess to the required form elements
 const radioSets = document.querySelectorAll('[data-radio-set]');
-const requiredInputs = document.querySelectorAll('.validation_basic');
 const dni = document.getElementById('dni_validation');
 const phoneNumber = document.getElementById('phone_validation');
 const email = document.getElementById('email_validation');
@@ -157,19 +152,14 @@ let currentItemSelected;
 let hasUserDoneFP = true;
 
 clearRadiosOnChecked(courseWeekdaysRadio);
-
 clearRadiosOnChecked(typeOfPaymentRadio);
-
 clearSelectBoxOnChange(courseHoursSelectBox);
-
 clearSelectBoxOnChange(englishCourseSelectBox);
-
 clearCheckboxOnChange(policiesCheckbox);
-
 clearSelectBoxOnChange(selectFPCourse);
-
 clearRadiosOnChecked(oldStudent);
 
+//Listen for a change in ALL the radio buttons, if state has changed, remove the danger class of OLD element and add it to the NEW one
 radioSets.forEach(function (set) {
   const radioButtons = set.querySelectorAll('.radioUpgraded');
 
@@ -186,6 +176,7 @@ radioSets.forEach(function (set) {
   });
 });
 
+//Listen for a change in DocumentInputs if the input is not empty, remove the danger class
 fileInput.onchange = () => {
   if (fileInput.files.length > 0) {
     totalFilesSelected++;
@@ -196,6 +187,7 @@ fileInput.onchange = () => {
   }
 };
 
+//Listen for a change in the select box PAYMENT TYPE, when detected update PRICE and PAYMENTYPEGLOBAL
 paymentTypeInputs.forEach((input) => {
   input.addEventListener('click', () => {
     if (document.getElementById('radioCustom6').checked) {
@@ -207,6 +199,7 @@ paymentTypeInputs.forEach((input) => {
   });
 });
 
+//First form trying to be pushed
 formUserDetails.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -225,6 +218,7 @@ formUserDetails.addEventListener('submit', (event) => {
   }
 });
 
+//Subform trying to be pushed
 formUserCourseDetails.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -235,16 +229,19 @@ formUserCourseDetails.addEventListener('submit', (event) => {
   }
 });
 
+//Return button clicked
 returnBtn.addEventListener('click', (event) => {
   event.preventDefault();
   formUserCourseDetails.classList.add('is-hidden');
   formUserDetails.classList.remove('is-hidden');
 });
 
+//Listen for a change in the select box COURSE, when detected update PRICE
 courseSelected.addEventListener('change', () => {
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
 
+//Listen for a change in the select box COURSE HOURS, when detected update PRICE
 courseSelect.addEventListener('change', (event) => {
   const selectedCourse = event.target.value;
   newElement = document.createElement("p");
@@ -266,16 +263,19 @@ courseSelect.addEventListener('change', (event) => {
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
 });
 
+//Listen for a change in the radio COURSE HOURS, when detected update PRICE and HANDLE SELECTION
 courseWeekdays.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
 
+//Listen for a change in the select box COURSE HOURS, when detected update PRICE and HANDLE SELECTION
 courseHours.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
 
+//LISTEN FOR A CHANGE IN THE RADIO BUTTONS COURSE WEEKDAYS, WHEN DETECTED UPDATE PRICE AND HANDLE SELECTION
 coursePaymentType.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
