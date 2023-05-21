@@ -1,4 +1,27 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat;:300,400,600,700,800|Source+Sans+Pro:300,400,600,700);
+/*animation*/
+.hide{
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s;
+}
+.show{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.container-data-child:nth-child(2){
+  transition-delay: 500ms;
+}
+
+.container-data-child:nth-child(3){
+  transition-delay: 1000ms;
+}
+
+.container-data-child:nth-child(4){
+  transition-delay: 1500ms;
+}
+
 /*NAVBAR STYLES*/
 .img-logo {
   width: 100%;

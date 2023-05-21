@@ -71,27 +71,24 @@ export function dangerOnValidationAppender(text, appender, input) {
     helpText.style.top = appender.offsetHeight + 'px';
     helpText.style.left = 0;
   }
-  
 
-  export function dangerOnValidationAppenderRadio(text, appender, input1, input2) {
-    input1.classList.add('is-danger');
-    input2.classList.add('is-danger');
-    
-    // Check if helpText element already exists
-    let helpText = appender.querySelector('.help');
-    
-    if (!helpText) {
-      helpText = document.createElement('p');
-      helpText.classList.add('help', 'is-danger');
-      helpText.textContent = text;
-      appender.appendChild(helpText);
-      helpText.style.position = 'absolute';
-      helpText.style.top = appender.offsetHeight + 'px';
-      helpText.style.left = 0;
-    }
-  }
-  
+export function dangerOnValidationAppenderRadio(text, appender, input1, input2) {
+input1.classList.add('is-danger');
+input2.classList.add('is-danger');
 
+let helpText = appender.querySelector('.help');
+
+if (!helpText) {
+    helpText = document.createElement('p');
+    helpText.classList.add('help', 'is-danger');
+    helpText.textContent = text;
+    appender.appendChild(helpText);
+    helpText.style.position = 'absolute';
+    helpText.style.top = appender.offsetHeight + 'px';
+    helpText.style.left = 0;
+}
+}
+  
 export function dangerOnValidationRemover(input) {
     input.classList.remove('is-danger');
     const inputWrapper = input.parentNode;
@@ -100,7 +97,6 @@ export function dangerOnValidationRemover(input) {
         helpText.parentNode.removeChild(helpText);
     }
 }
-
 export function validateForm(totalFilesSelected, fileInput, dni, email, phoneNumber, date1, date2) {
     const formInputs = document.forms["user_details"].elements;
     let radioCounter = 0;
@@ -212,7 +208,6 @@ export function validateForm(totalFilesSelected, fileInput, dni, email, phoneNum
         return false;
     }
 }
-
 //VALIDACION MIKEL
 export function DNIValidaion(dni) {
     const letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
@@ -228,7 +223,6 @@ export function DNIValidaion(dni) {
 //VALIDACION INAZIO
 export function emailValidation(email) {
     let regExp = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
-    //Si no funciona probar esta ^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$
     if (email.match(regExp)) {
         return true;
     } else {
@@ -369,13 +363,10 @@ export function clearRadiosOnChecked(radioSet) {
       radio.addEventListener('change', (event) => {
         if (event.target) {
           const selectedValue = event.target.getAttribute('data-value');
-          // Use the selectedValue to determine which radio button was clicked
           if (selectedValue === '0') {
-            // Handle logic for "Lunes y miércoles" selection
             dangerOnValidationRemover(radio.nextElementSibling);
             dangerOnValidationRemover(radio.nextElementSibling.nextElementSibling.nextElementSibling);
           } else if (selectedValue === '1') {
-            // Handle logic for "Martes y jueves" selection
             dangerOnValidationRemover(radio.nextElementSibling);
             dangerOnValidationRemover(radio.previousElementSibling);
           }
@@ -385,7 +376,7 @@ export function clearRadiosOnChecked(radioSet) {
   }
   
 
-export function updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected) {
+export function updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal) {
     if (!newElement) {
         return;
     }
@@ -407,19 +398,29 @@ export function updatePriceText(newElement, courseSelect, courseHours, coursesDa
     }
 }
 
-export function handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFp) {
+export function handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFp, courseWeekdaysRadio) {
     if ((courseWeekdays.checked || courseWeekdays.nextElementSibling.nextElementSibling.checked) && (coursePaymentType.checked || coursePaymentType.nextElementSibling.nextElementSibling.checked) && courseHours.value !== "") {
-        //updatePriceText(newElement);
 
+        let days;
+        courseWeekdaysRadio.forEach(radio => {
+            if (radio.checked) {
+              const dataValue = radio.getAttribute('data-value');
+              if (dataValue === '0') {
+                days = 'Lunes y miércoles';
+              } else if (dataValue === '1') {
+                days = 'Martes y jueves';
+              }
+            }
+          });
+          
 
-        const days = courseWeekdays.nextElementSibling.innerHTML;
-        const hours = courseHours.value;
+        const levelCourse = courseHours.value;
 
         let filteredCourses = Object.values(coursesData).filter(course => {
             if (course.course.includes("FP") && !hasUserDoneFp) {
                 return;
             }else{
-                return course.days.includes(days) && course.course.includes(hours);
+                return course.days.includes(days) && course.course.includes(levelCourse);
             }
             });
         
@@ -446,7 +447,6 @@ export function handleSelection(courseWeekdays, courseHours, coursePaymentType, 
 
     } else {
         courseSelect.disabled = true;
-        //updatePriceText(newElement);
     }
 
 }
@@ -491,20 +491,7 @@ export function validateFormOxford(dni, email, phone) {
 
                 
               }
-        }
-
-        // } else if (formInputs[i].tagName === "SELECT") {
-        //     if (formInputs[i].value === "") {
-        //         dangerOnValidationAppender(
-        //             "Please select a valid option",
-        //             formInputs[i].parentNode,
-        //             formInputs[i].parentNode
-        //         );
-        //         canWeSendTheForm = false;
-        //     }
-        // } 
-
-        
+        }    
     }
 
     if (!DNIValidaion(dni.value)) {

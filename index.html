@@ -95,11 +95,6 @@
     </nav>
   </header>
 
-  <!--No sirve creo (?)
-  <div id="miElemento" class="oculto">
-    <a class="irArriba" href="#arriba"><img class="flecha" src="./IMAGENES2/flechArriba.png" alt="flecha"></a>
-  </div>
-  -->
   <!--Start of section "Landing"-->
   <div class="hero is-big custom-bg is-link">
     <div class="hero-body is-z-preference has-text-centered">
@@ -116,14 +111,14 @@
   <!--End of section "Landing"-->
 
   <!--Start of section "Our Services"-->
-  <section class="section">
+  <section class="section hide">
 
     <div class="container mb-6">
       <div class="has-text-centered">
-        <p class="has-text-weight-bold is-5"> <!-- Updated size to is-size-4 -->
+        <p class="has-text-weight-bold is-5">
           <span class="separator"></span> AFFORDABLE AND UNBEATABLE PRICES <span class="separator"></span>
         </p>
-        <h1 class="title is-2 mt-4"> <!-- Updated size to is-2 -->
+        <h1 class="title is-2 mt-4">
           What Do We Offer
         </h1>
       </div>
@@ -136,11 +131,12 @@
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
               <i class="fas fa-language fa-3x"></i>
             </div>
-            <h2 class="title is-3 has-text-centered"> <!-- Updated size to is-4 -->
-              English Courses
+            <h2 class="title is-3 has-text-centered">
+              <a href="./index.html#course-categories">Language Courses</a>
             </h2>
+            
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
-              All-level English courses tailored to your needs. Experience our teaching approach with a free trial class.
+              All-level English/French courses tailored to your needs. Experience our teaching approach with a free trial class.
             </div>
           </div>
         </div>
@@ -151,8 +147,8 @@
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
               <i class="fas fa-graduation-cap fa-3x"></i>
             </div>
-            <h2 class="title is-3 has-text-centered"> <!-- Updated size to is-4 -->
-              Oxford Exams
+            <h2 class="title is-3 has-text-centered">
+              <a href="./oxford.html">Oxford Exams</a>
             </h2>
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
               Official Oxford college offering exam preparation courses. Expert instructors to guide you towards success.
@@ -164,10 +160,10 @@
         <div class="card servicios scale">
           <div class="card-content">
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
-              <i class="fas fa-language fa-3x"></i>
+              <i class="fas fa-envelope fa-3x"></i>
             </div>
-            <h2 class="title is-3 has-text-centered"> <!-- Updated size to is-4 -->
-              French Courses
+            <h2 class="title is-3 has-text-centered">
+              <a href="mailto:example@example.com">Free Trial</a>
             </h2>
             <div class="content pl-6 pr-6 pb-4 has-text-centered">
               Comprehensive French courses for all levels. Start your learning journey with a free trial class.
@@ -177,20 +173,16 @@
       </div>
     </div>
   </section>
-  
-  
-  
-  
   <!--End of section "Our Services"-->
 
   <!--Start of section "Why Enroll in Our English Academy"-->
-  <section class="section">
+  <section class="section hide">
     <div class="container mb-6">
       <div class="has-text-centered">
-        <p class="has-text-weight-bold is-5"> <!-- Updated size to is-size-4 -->
+        <p class="has-text-weight-bold is-5">
           <span class="separator"></span> EXCEPTIONAL QUALITY AND VALUE <span class="separator"></span>
         </p>
-        <h1 class="title is-2 mt-4"> <!-- Updated size to is-2 -->
+        <h1 class="title is-2 mt-4">
           What Sets Us Apart
         </h1>
       </div>
@@ -248,21 +240,21 @@
 
     <div class="container">
       <div class="columns is-multiline">
-        <div class="column is-4-desktop is-6-tablet">
+        <div class="column is-4-desktop is-6-tablet hide container-data-child">
           <div class="counter-item has-text-centered mt-5 scale">
             <h3 class="mb-0"><span class="counter-stat">1730</span> +</h3>
             <p class="text-muted">Students Enrolled</p>
           </div>
         </div>
-        <div class="column is-4-desktop is-6-tablet">
+        <div class="column is-4-desktop is-6-tablet hide container-data-child">
           <div class="counter-item has-text-centered mt-5 scale">
-            <h3 class="mb-0"><span class="counter-stat">98</span>%</h3>
+            <h3 class="mb-0"><span class="counter-stat">95</span>%</h3>
             <p class="text-muted">Students Certificated</p>
           </div>
         </div>
-        <div class="column is-4-desktop is-6-tablet">
+        <div class="column is-4-desktop is-6-tablet hide container-data-child">
           <div class="counter-item has-text-centered mt-5 scale">
-            <h3 class="mb-0"><span class="counter-stat">20</span></h3>
+            <h3 class="mb-0"><span class="counter-stat">16</span></h3>
             <p class="text-muted">Years Experience</p>
           </div>
         </div>
@@ -270,10 +262,9 @@
     </div>
   </section>
   <!--End of section "Why Enroll in Our English Academy"-->
-  <!--Source Data Display: https://demo.themefisher.com/enov-bulma/-->
 
   <!--Start of section "Our Courses"-->
-  <section class="section" id="course-categories">
+  <section class="section hide" id="course-categories">
     <div class="container mb-6">
       <div class="has-text-centered">
         <p class="has-text-weight-bold is-4">
@@ -286,7 +277,6 @@
     </div>
     <div class="columns">
       <div class="column">
-        <!--C1, C2, B1, B2 menu-->
         <aside class="menu">
           <ul class="menu-list">
             <li>
@@ -301,16 +291,6 @@
                       Monday and Wednesday from 9:00 to 10:30
                     </div>
                   </div>
-                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
-              <article class="message is-info">
-                <div class="message-body is-hidden">
-                  You can understand and use familiar everyday expressions and very basic phrases aimed at the
-                  satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
-                  questions about personal details such as where you live, people you know and things you have. You can
-                  interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
-                </div>
-              </article>
-              -->
                 </li>
                 <li>A2
                   <span class="icon">
@@ -321,17 +301,6 @@
                       Monday and Wednesday from 9:00 to 10:30
                     </div>
                   </div>
-                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
-              <article class="message is-info">
-                <div class="message-body is-hidden">
-                  You can understand sentences and frequently used expressions related to areas of most immediate
-                  relevance (e.g. very basic personal and family information, shopping, local geography, employment).
-                  You can communicate in simple and routine tasks requiring a simple and direct exchange of information
-                  on familiar and routine matters. You can describe in simple terms aspects of your background,
-                  immediate environment and matters in areas of immediate need.
-                </div>
-              </article>
-              -->
                 </li>
 
                 <li>B1
@@ -380,7 +349,6 @@
               </ul>
             </li>
 
-            <!--TODO FRENCH-->
             <li>
               <a class="subtitle is-active">French <i class="fas fa-angle-down"></i></a>
               <ul>
@@ -393,16 +361,6 @@
                       Monday and Wednesday from 9:00 to 10:30
                     </div>
                   </div>
-                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
-              <article class="message is-info">
-                <div class="message-body is-hidden">
-                  You can understand and use familiar everyday expressions and very basic phrases aimed at the
-                  satisfaction of needs of a concrete type. You can introduce yourself and others and can ask and answer
-                  questions about personal details such as where you live, people you know and things you have. You can
-                  interact in a simple way provided the other person talks slowly and clearly and is prepared to help.
-                </div>
-              </article>
-              -->
                 </li>
                 <li>A2
                   <span class="icon">
@@ -413,17 +371,6 @@
                       Monday and Wednesday from 9:00 to 10:30
                     </div>
                   </div>
-                  <!--! ESTA INFO VA AL FORMULARIO CON BOTON AYUDA
-              <article class="message is-info">
-                <div class="message-body is-hidden">
-                  You can understand sentences and frequently used expressions related to areas of most immediate
-                  relevance (e.g. very basic personal and family information, shopping, local geography, employment).
-                  You can communicate in simple and routine tasks requiring a simple and direct exchange of information
-                  on familiar and routine matters. You can describe in simple terms aspects of your background,
-                  immediate environment and matters in areas of immediate need.
-                </div>
-              </article>
-              -->
                 </li>
 
                 <li>B1
@@ -475,16 +422,14 @@
         </aside>
       </div>
       <div class="column">
-        <!--Implement a calendar-->
         <div id="calendar"></div>
-
       </div>
     </div>
   </section>
   <!--End of section "Our Courses"-->
 
   <!--Start of section "Students Reviews"-->
-  <section class="section">
+  <section class="section hide">
     <div class="container mb-6">
       <div class="has-text-centered">
         <p class="has-text-weight-bold is-4">
@@ -527,7 +472,7 @@
   <!--End of section "Students Reviews"-->
 
   <!--Start of section "FAQ"-->
-  <section class="section" id="FAQ">
+  <section class="section hide" id="FAQ">
     <div class="container mb-6">
       <div class="has-text-centered">
         <p class="has-text-weight-bold is-4">
@@ -914,11 +859,7 @@
   <!--End of section "FAQ"-->
 
   <!-- Inscription form as subform -->
-  <iframe src="./form.html" title="Formulario de inscripción" id="form" class="iframe-form"></iframe>
-
-  <!-- Footer 
-  <iframe src="./footer.html" title="Footer" id="footer"></iframe>
--->
+  <iframe src="./form.html" title="Formulario de inscripción" id="form" class="iframe-form hide"></iframe>
 
 <footer>
   <div class="content">

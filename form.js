@@ -254,7 +254,7 @@ returnBtn.addEventListener('click', (event) => {
 });
 
 courseSelected.addEventListener('change', () => {
-  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
+  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
 
 courseSelect.addEventListener('change', (event) => {
@@ -279,16 +279,16 @@ courseSelect.addEventListener('change', (event) => {
 });
 
 courseWeekdays.addEventListener('change', function () {
-  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP);
-  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
+  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
+  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
 
 courseHours.addEventListener('change', function () {
-  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP);
-  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
+  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
+  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
 
 coursePaymentType.addEventListener('change', function () {
-  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP);
-  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
+  handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
+  currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });

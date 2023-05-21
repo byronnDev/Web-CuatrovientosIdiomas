@@ -14,19 +14,19 @@ import {
     validateFormOxford
   } from "./helpers.js";
 
-  const formOxfordDetails = document.querySelector('form[name="oxfordDetails"]'); // Oxford form
-  const requiredInputs = document.querySelectorAll('.validation_basic'); // All required inputs w .validation_basic class
-  const dni = document.getElementById('dni_validation'); // DNI input
-  const email = document.getElementById('email_validation'); // Email input
-  const phoneNumber = document.getElementById('phone_validation'); //Phone number input
-  const selectFPCourse = document.getElementsByName('coursesFP'); // Select box for FP courses
-    const underage = document.getElementsByName('underage'); // Radio buttons for old student
+  const formOxfordDetails = document.querySelector('form[name="oxfordDetails"]');
+  const requiredInputs = document.querySelectorAll('.validation_basic');
+  const dni = document.getElementById('dni_validation');
+  const email = document.getElementById('email_validation');
+  const phoneNumber = document.getElementById('phone_validation');
+  const selectFPCourse = document.getElementsByName('coursesFP');
+    const underage = document.getElementsByName('underage');
     const radioSets = document.querySelectorAll('[data-radio-set]');
     
 
   clearSelectBoxOnChange(selectFPCourse);
   clearRadiosOnChecked(underage);
-  radioSets.forEach(function (set) { //TODO to function pls
+  radioSets.forEach(function (set) {
     const radioButtons = set.querySelectorAll('.radioUpgraded');
   
     radioButtons.forEach(function (radioButton) {
@@ -64,18 +64,14 @@ import {
 
   });
 
-  // Get all the buttons with class 'has-paid'
 const buttons = document.querySelectorAll('.has-paid');
 
-// Add click event listener to each button
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    // Get the value of the parent element
     const parentValue = button.parentElement.value;
 
-    // Traverse up two levels in the DOM
     const grandParent = button.parentElement.previousElementSibling.previousElementSibling;
-    const planPrice = grandParent.textContent.trim().replace(/\$/g, '');
+    const planPrice = grandParent.textContent.split(' ')[0];
 
     stripe(planPrice, productsData);
 
