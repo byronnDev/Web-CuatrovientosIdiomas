@@ -1,4 +1,3 @@
-//animation firehip
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -33,7 +32,6 @@ function googleTranslateElementInit() {
       }
       setInterval(checkAndHideElement, 10);
 
-// FAQ section
 var readMoreButton = document.getElementById('readMoreButton');
 var faqElements = document.getElementsByClassName('is-faq');
 
@@ -54,8 +52,20 @@ if (readMoreButton && faqElements.length > 0) {
     }
   });
 }
+window.addEventListener("DOMContentLoaded", function() {
+  var elemento = document.getElementById("flecha");
+  elemento.style.display = "none";
+});
 
-// Courses section
+window.addEventListener("scroll", function() {
+  var elemento = document.getElementById("flecha");
+  if (window.pageYOffset >= 650) {
+      elemento.style.display = "block";
+  } else {
+      elemento.style.display = "none";
+  }
+});
+
 const subtitles = document.getElementsByClassName('subtitle is-active');
 for (let i = 0; i < subtitles.length; i++) {
     subtitles[i].addEventListener('click', function () {
@@ -65,7 +75,7 @@ for (let i = 0; i < subtitles.length; i++) {
 }
 
 
-// More info button on the Course Details page
+
 const calendarIcons = document.getElementsByClassName('fa-calendar-days');
 for (let i = 0; i < calendarIcons.length; i++) {
     calendarIcons[i].style.cursor = 'pointer';
@@ -83,7 +93,6 @@ for (let i = 0; i < calendarIcons.length; i++) {
     });
 }
 
-// More info button on the Course Details page in FAQ section
 let collection = document.getElementsByClassName("is-faq");
 Array.from(collection).forEach(element => {
     element.addEventListener("mousedown", function () {
@@ -95,13 +104,11 @@ Array.from(collection).forEach(element => {
             element.getElementsByClassName("fas")[0].classList.toggle("fa-rotate-180");
         }
     });
-    // mouseover
     element.addEventListener("mouseover", function () {
         element.style.cursor = "pointer";
     });
 });
 
-// Burger menu
 const burger = document.getElementsByClassName('navbar-burger')[0];
 burger.addEventListener('click', function () {
     const menu = document.getElementById(burger.dataset.target);

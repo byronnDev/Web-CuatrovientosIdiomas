@@ -21,6 +21,16 @@
 .container-data-child:nth-child(4){
   transition-delay: 1500ms;
 }
+.irArriba{
+  position:fixed;
+  bottom: 40px;
+  right: 25px;
+  z-index: 2;
+}
+img.flecha{
+  width: 50px;
+  height: 50px;
+}
 
 /*NAVBAR STYLES*/
 .img-logo {

@@ -1,10 +1,3 @@
-// showHelp for English level
-function showHelp() {
-  const helpText = document.getElementById('help');
-  helpText.classList.toggle('is-hidden');
-}
-
-
 import {
   stripe,
   dangerOnValidationAppender,
@@ -163,7 +156,6 @@ let newElement;
 let currentItemSelected;
 let hasUserDoneFP = true;
 
-// RAW Function calls
 clearRadiosOnChecked(courseWeekdaysRadio);
 
 clearRadiosOnChecked(typeOfPaymentRadio);
@@ -177,8 +169,6 @@ clearCheckboxOnChange(policiesCheckbox);
 clearSelectBoxOnChange(selectFPCourse);
 
 clearRadiosOnChecked(oldStudent);
-
-//Functionalities on vars gotten from DOM
 
 radioSets.forEach(function (set) {
   const radioButtons = set.querySelectorAll('.radioUpgraded');
@@ -216,8 +206,6 @@ paymentTypeInputs.forEach((input) => {
     currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal, currentItemSelected);
   });
 });
-
-//Listeners
 
 formUserDetails.addEventListener('submit', (event) => {
   event.preventDefault();
