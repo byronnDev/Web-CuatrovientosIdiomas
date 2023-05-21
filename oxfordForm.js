@@ -2,7 +2,8 @@ import {
     stripe,
     clearSelectBoxOnChange,
     clearRadiosOnChecked,
-    validateFormOxford
+    validateFormOxford,
+    resetForm
   } from "./helpers.js";
 
   const productsData = {
@@ -48,6 +49,7 @@ import {
   const selectFPCourse = document.getElementsByName('coursesFP');
   const underage = document.getElementsByName('underage');
   const radioSets = document.querySelectorAll('[data-radio-set]');
+  const resetElements = document.querySelectorAll('.reset-me');
     
 
   clearSelectBoxOnChange(selectFPCourse);
@@ -107,3 +109,4 @@ buttons.forEach(button => {
   });
 });
 
+resetForm(formOxfordDetails, resetElements, radioSets)

@@ -497,3 +497,24 @@ export function validateFormOxford(dni, email, phone) {
         return false;
     }
 }
+//reset form
+export function resetForm(form, resetElements, radioSets) {
+    resetElements.forEach(function(element) {
+        element.addEventListener('click', function(event) {
+            event.preventDefault();
+            removeLightClassFromRadioSets(radioSets);
+            form.reset();
+        });
+      });
+  }
+
+function removeLightClassFromRadioSets(radioSets) {
+    radioSets.forEach(function(set) {
+      const radioButtons = set.querySelectorAll('.radioUpgraded');
+  
+      radioButtons.forEach(function(radioButton) {
+        const label = radioButton.nextElementSibling;
+        label.classList.add("is-light");
+      });
+    });
+  }

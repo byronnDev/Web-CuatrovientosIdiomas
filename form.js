@@ -7,7 +7,8 @@ import {
   clearCheckboxOnChange,
   clearRadiosOnChecked,
   updatePriceText,
-  handleSelection
+  handleSelection,
+  resetForm
 } from "./helpers.js";
 
 const productsData = {
@@ -145,6 +146,8 @@ const courseSelected = document.querySelector('select[name="englishCourse"]');
 const courseWeekdays = document.querySelector('input[name="course_weekdays"]');
 const courseHours = document.querySelector('select[name="courseHours"]');
 const coursePaymentType = document.querySelector('input[name="payment_type"]');
+const resetElements = document.querySelectorAll('.reset-me');
+const resetElementsSub = document.querySelectorAll('.reset-me-sub');
 let totalFilesSelected = 0;
 let paymentTypeGlobal = 0;
 let newElement;
@@ -280,3 +283,6 @@ coursePaymentType.addEventListener('change', function () {
   handleSelection(courseWeekdays, courseHours, coursePaymentType, courseSelect, coursesData, hasUserDoneFP, courseWeekdaysRadio);
   currentItemSelected = updatePriceText(newElement, courseSelect, courseHours, coursesData, paymentTypeGlobal);
 });
+
+resetForm(formUserDetails, resetElements, radioSets);
+resetForm(formUserCourseDetails, resetElementsSub, radioSets);
