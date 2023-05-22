@@ -48,7 +48,6 @@ const cardsContainer = document.querySelector(".card-carousel");
                 })
             }
 
-            // Get the distance that the user has dragged
             getDistance(callback) {
                 function distanceInit(e1) {
                     let startingX, startingY;

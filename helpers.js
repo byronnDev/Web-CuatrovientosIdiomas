@@ -73,20 +73,20 @@ export function dangerOnValidationAppender(text, appender, input) {
 
 //This appends a text to an APPENDER and adds a class to the INPUT1 INPUT2 to make it red
 export function dangerOnValidationAppenderRadio(text, appender, input1, input2) {
-input1.classList.add('is-danger');
-input2.classList.add('is-danger');
+    input1.classList.add('is-danger');
+    input2.classList.add('is-danger');
 
-let helpText = appender.querySelector('.help');
+    let helpText = appender.querySelector('.help');
 
-if (!helpText) {
-    helpText = document.createElement('p');
-    helpText.classList.add('help', 'is-danger');
-    helpText.textContent = text;
-    appender.appendChild(helpText);
-    helpText.style.position = 'absolute';
-    helpText.style.top = appender.offsetHeight + 'px';
-    helpText.style.left = 0;
-}
+        if (!helpText) {
+            helpText = document.createElement('p');
+            helpText.classList.add('help', 'is-danger');
+            helpText.textContent = text;
+            appender.appendChild(helpText);
+            helpText.style.position = 'absolute';
+            helpText.style.top = appender.offsetHeight + 'px';
+            helpText.style.left = 0;
+        }
 }
 
 //This removes the red class from the INPUT and removes the text from the APPENDER
@@ -131,16 +131,7 @@ export function validateForm(totalFilesSelected, fileInput, dni, email, phoneNum
             }
 
 
-        } /* else if (formInputs[i].tagName === "SELECT") {
-            if (formInputs[i].value === "") {
-                dangerOnValidationAppender(
-                    "Please select a valid option",
-                    formInputs[i].parentNode,
-                    formInputs[i].parentNode
-                );
-                canWeSendTheForm = false;
-            }
-        }  */
+        }
         else if (formInputs[i].tagName === "INPUT") {
             if (formInputs[i].classList.contains("validation_basic")) {
                 if (formInputs[i].value.trim() === "") {
@@ -213,11 +204,11 @@ export function validateForm(totalFilesSelected, fileInput, dni, email, phoneNum
 }
 //VALIDACION MIKEL
 export function DNIValidaion(dni) {
-    const letras = 'TRWAGMYFPDXBNJZSQVHLCKET';
-    const letra = dni.charAt(dni.length - 1).toUpperCase();
-    const numeros = dni.slice(0, -1);
+    const letras = 'TRWAGMYFPDXBNJZSQVHLCKET'; //letras del dni
+    const letra = dni.charAt(dni.length - 1).toUpperCase(); //letra del dni
+    const numeros = dni.slice(0, -1); //numeros del dni
 
-    if (letras.charAt(numeros % 23) === letra) {
+    if (letras.charAt(numeros % 23) === letra) { // Comprobamos si la letra del dni es correcta
         return true;
     } else {
         return false;

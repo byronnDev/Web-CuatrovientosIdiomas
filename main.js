@@ -71,52 +71,57 @@ window.addEventListener("scroll", function () {
   }
 });
 
-const subtitles = document.getElementsByClassName('subtitle is-active');
+// MIKEL
+// Muestra el contenido de los Niveles de Inglés y Francés
+const subtitles = document.getElementsByClassName('subtitle is-active'); // Get all the subtitles that are active
 for (let i = 0; i < subtitles.length; i++) {
   subtitles[i].addEventListener('click', function () {
-    const content = this.nextElementSibling;
-    content.classList.toggle('is-hidden');
+    const content = this.nextElementSibling; // Obtiene el siguiente elemento del subtitle
+    content.classList.toggle('is-hidden'); // Toggle the class is-hidden
   });
 }
-
+// When calendar icon is hovered show title
 const calendarIcons = document.getElementsByClassName('fa-calendar-days');
 for (let i = 0; i < calendarIcons.length; i++) {
-  calendarIcons[i].style.cursor = 'pointer';
+  calendarIcons[i].style.cursor = 'pointer'; // Change the cursor to pointer
   calendarIcons[i].addEventListener('mouseover', function () {
-    this.title = 'Show schedule';
+    this.title = 'Show schedule'; // Set the title
   });
 }
-
+// When calendar icon is clicked toggle classes for the one clicked
 for (let i = 0; i < calendarIcons.length; i++) {
   calendarIcons[i].addEventListener('click', function () {
-    const parentElement = this.parentNode.parentNode;
-    const messageBody = parentElement.querySelector('.message-body');
+    const parentElement = this.parentNode.parentNode; // El padre del padre del icono
+    const messageBody = parentElement.querySelector('.message-body'); // Get the message body
 
-    messageBody.classList.toggle('is-hidden');
+    messageBody.classList.toggle('is-hidden'); // Toggle the class is-hidden
   });
 }
 
-//When div gets mousedown toggle classes for the one clicked
-let collection = document.getElementsByClassName("is-faq");
-Array.from(collection).forEach(element => {
+// FAQs
+// When calendar icon is clicked toggle classes for the one clicked
+let collection = document.getElementsByClassName("is-faq"); // Get all the faq elements
+Array.from(collection).forEach(element => { // For each element add the event listener
   element.addEventListener("mousedown", function () {
     if (element.getElementsByClassName("card-content")[0].classList.contains("is-hidden")) {
+      // Muestra el contenido y rota la flecha
       element.getElementsByClassName("card-content")[0].classList.remove("is-hidden");
       element.getElementsByClassName("fas")[0].classList.toggle("fa-rotate-180");
     } else {
+      // Oculta el contenido y rota la flecha
       element.getElementsByClassName("card-content")[0].classList.add("is-hidden");
       element.getElementsByClassName("fas")[0].classList.toggle("fa-rotate-180");
     }
   });
   element.addEventListener("mouseover", function () {
-    element.style.cursor = "pointer";
+    element.style.cursor = "pointer"; // Cambia el cursor a pointer
   });
 });
 
-//Listen for click on navbar burger and toggle classes
-const burger = document.getElementsByClassName('navbar-burger')[0];
+// Listen for click on navbar burger and toggle classes
+const burger = document.getElementsByClassName('navbar-burger')[0]; // Get the burger element [0] because it's the only one
 burger.addEventListener('click', function () {
-  const menu = document.getElementById(burger.dataset.target);
-  burger.classList.toggle('is-active');
-  menu.classList.toggle('is-active');
+  const menu = document.getElementById(burger.dataset.target); // Get the menu element by the id
+  burger.classList.toggle('is-active'); // Toggle the class is-active for the burger
+  menu.classList.toggle('is-active'); // Toggle the class is-active for the menu
 });
