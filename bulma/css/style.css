@@ -112,7 +112,7 @@ html {
   height: 80%;
 }
 
-/* Better scrollbars */
+/* Better scrollbar */
 html::-webkit-scrollbar {
   width: 5px;
 }
