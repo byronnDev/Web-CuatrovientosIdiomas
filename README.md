@@ -28,7 +28,7 @@ No lo dudes más y visita la web de la escuela de idiomas de Cuatrovientos. ¡Te
 Si quieres colaborar en este proyecto, puedes seguir los siguientes pasos:
 
 1. Haz un fork del repositorio original en tu cuenta de GitHub.
-2. Clona el repositorio en tu máquina local con el comando `git clone https://github.com/tu_usuario/Web-CuatrovientosIdiomas.git`.
+2. Clona el repositorio en tu máquina local con el comando `git clone https://github.com/byronnDev/Web-CuatrovientosIdiomas.git`.
 3. Crea una rama con un nombre descriptivo para tu aportación con el comando `git checkout -b nombre_de_la_rama`.
 4. Realiza los cambios que consideres necesarios en el código y comprueba que funcionan correctamente.
 5. Añade los archivos modificados al área de preparación con el comando `git add .`.
